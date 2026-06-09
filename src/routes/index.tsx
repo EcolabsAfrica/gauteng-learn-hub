@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BookOpen, GraduationCap, Wrench, Briefcase, Check } from "lucide-react";
-import hero from "../assets/gallery/gallery-2.jpeg.asset.json";
+import hero from "../assets/gallery/photo-09-classroom.jpeg.asset.json";
 import about from "../assets/gallery/gallery-3.jpeg.asset.json";
 import g1 from "../assets/gallery/gallery-9.jpeg.asset.json";
 import g2 from "../assets/gallery/gallery-11.jpeg.asset.json";
