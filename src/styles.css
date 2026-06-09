@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -64,19 +65,25 @@
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.18 0.04 260);
+  --foreground: oklch(0.18 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.04 260);
+  --card-foreground: oklch(0.18 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.04 260);
-  --primary: oklch(0.27 0.08 258);
-  --primary-foreground: oklch(0.98 0.005 250);
-  --secondary: oklch(0.96 0.01 250);
-  --secondary-foreground: oklch(0.27 0.08 258);
-  --muted: oklch(0.96 0.01 250);
-  --muted-foreground: oklch(0.5 0.03 257);
-  --accent: oklch(0.72 0.18 50);
-  --accent-foreground: oklch(0.99 0.005 250);
+  --popover-foreground: oklch(0.18 0 0);
+  /* Primary: #E8500A orange */
+  --primary: oklch(0.625 0.197 38);
+  --primary-foreground: oklch(1 0 0);
+  /* Secondary: #2E7D32 green */
+  --secondary: oklch(0.51 0.13 145);
+  --secondary-foreground: oklch(1 0 0);
+  /* Navy: #1A237E */
+  --navy: oklch(0.27 0.15 270);
+  --navy-foreground: oklch(1 0 0);
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+  --accent: oklch(0.625 0.197 38);
+  --accent-foreground: oklch(1 0 0);
+  --alt-bg: oklch(0.96 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.929 0.013 255.508);
