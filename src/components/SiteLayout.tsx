@@ -21,8 +21,8 @@ export function SiteLayout() {
       <header className="sticky top-0 z-40 bg-white text-foreground shadow-sm border-b border-black/5">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex h-20 items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-3 shrink-0">
-            <img src={dhetLogo.url} alt="Department of Higher Education and Training, Republic of South Africa" className="h-12 w-auto object-contain" />
-            <img src={cetLogo.url} alt="Gauteng CET College" className="h-12 w-auto object-contain" />
+            <img src={dhetLogo.url} alt="Department of Higher Education and Training, Republic of South Africa" className="h-16 w-auto object-contain" />
+            <img src={cetLogo.url} alt="Gauteng CET College" className="h-10 w-auto object-contain" />
           </Link>
           <nav className="hidden lg:flex items-center gap-1">
             {nav.map((n) => (
@@ -74,8 +74,8 @@ export function SiteLayout() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-3">
           <div>
             <div className="flex items-center gap-3 mb-4 bg-white/95 rounded-md p-2 w-fit">
-              <img src={dhetLogo.url} alt="DHET" className="h-10 w-auto object-contain" />
-              <img src={cetLogo.url} alt="Gauteng CET College" className="h-10 w-auto object-contain" />
+              <img src={dhetLogo.url} alt="DHET" className="h-14 w-auto object-contain" />
+              <img src={cetLogo.url} alt="Gauteng CET College" className="h-9 w-auto object-contain" />
             </div>
             <h3 className="font-bold text-lg">Gauteng CET College</h3>
             <p className="text-sm opacity-90 mt-1">Institution of choice driving social change.</p>
