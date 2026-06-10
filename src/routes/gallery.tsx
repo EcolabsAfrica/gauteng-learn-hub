@@ -3,22 +3,16 @@ import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-import photo02 from "../assets/gallery/photo-02-fire-safety-training.jpeg.asset.json";
-import photo09 from "../assets/gallery/photo-09-classroom.jpeg.asset.json";
-import g2 from "../assets/gallery/gallery-2.jpeg.asset.json";
-import g3 from "../assets/gallery/gallery-3.jpeg.asset.json";
-import g9 from "../assets/gallery/gallery-9.jpeg.asset.json";
-import g11 from "../assets/gallery/gallery-11.jpeg.asset.json";
-import g13 from "../assets/gallery/gallery-13.jpeg.asset.json";
-import staffGroup from "../assets/staff-group.jpeg.asset.json";
-import studentSpeaker from "../assets/student-speaker.jpeg.asset.json";
-import studentsInduction from "../assets/students-induction.jpeg.asset.json";
-import studentsOutdoor from "../assets/students-outdoor.jpeg.asset.json";
-import trainingSession from "../assets/training-session.jpeg.asset.json";
-import tailoringStudent from "../assets/tailoring-student.jpeg.asset.json";
-import sewingWorkshop from "../assets/sewing-workshop.jpeg.asset.json";
-import tabletHandover from "../assets/tablet-handover.jpeg.asset.json";
-import principal from "../assets/principal.jpeg.asset.json";
+import p1 from "../assets/gallery/photo-1.jpeg.asset.json";
+import p2 from "../assets/gallery/photo-2.jpeg.asset.json";
+import p3 from "../assets/gallery/photo-3.jpeg.asset.json";
+import p4 from "../assets/gallery/photo-4.jpeg.asset.json";
+import p5 from "../assets/gallery/photo-5.jpeg.asset.json";
+import p6 from "../assets/gallery/photo-6.jpeg.asset.json";
+import p7 from "../assets/gallery/photo-7.jpeg.asset.json";
+import p8 from "../assets/gallery/photo-8.jpeg.asset.json";
+import p9 from "../assets/gallery/photo-9.jpeg.asset.json";
+import p10 from "../assets/gallery/photo-10.jpeg.asset.json";
 
 type Category = "Students" | "Training" | "Skills & Vocational" | "Leadership & Events";
 
@@ -29,22 +23,16 @@ interface GalleryPhoto {
 }
 
 const photos: GalleryPhoto[] = [
-  { url: staffGroup.url, caption: "Skills programme graduates with their toolkit kits — ready for the world of work", category: "Skills & Vocational" },
-  { url: photo02.url, caption: "Occupational health and safety training in action", category: "Training" },
-  { url: studentSpeaker.url, caption: "Celebrating completion — our students earn every success", category: "Leadership & Events" },
-  { url: trainingSession.url, caption: "Hands-on workplace safety skills training", category: "Training" },
-  { url: studentsOutdoor.url, caption: "Learners engaged in outdoor practical training", category: "Students" },
-  { url: g2.url, caption: "Agriculture programme — growing food security alongside skills", category: "Skills & Vocational" },
-  { url: g3.url, caption: "In partnership with the Department of Higher Education & Training", category: "Leadership & Events" },
-  { url: tailoringStudent.url, caption: "Seamstress programme — vocational skills with a future", category: "Skills & Vocational" },
-  { url: photo09.url, caption: "Active learning in our community classrooms", category: "Students" },
-  { url: studentsInduction.url, caption: "Gauteng CET College students — proud and ready", category: "Students" },
-  { url: g9.url, caption: "Our students engage in a national education conference", category: "Leadership & Events" },
-  { url: sewingWorkshop.url, caption: "Sewing and textiles — practical vocational training", category: "Skills & Vocational" },
-  { url: g11.url, caption: "A proud community of learners and educators", category: "Students" },
-  { url: g13.url, caption: "Students in discussion — ideas and futures being built", category: "Students" },
-  { url: tabletHandover.url, caption: "Digitisation initiative — students receive tablets to support learning", category: "Leadership & Events" },
-  { url: principal.url, caption: "Mrs F.M. Chechile — Acting Principal, Gauteng CET College", category: "Leadership & Events" },
+  { url: p1.url, caption: "Thabomeleng Training Institute — vocational trainees with their branded toolkit cases", category: "Skills & Vocational" },
+  { url: p2.url, caption: "Occupational health and safety training — hi-vis, hard hats, fire extinguishers and first-aid kit", category: "Training" },
+  { url: p3.url, caption: "Graduation celebration — mortar boards raised in the air", category: "Leadership & Events" },
+  { url: p4.url, caption: "Workplace safety training group — smiling and celebratory", category: "Training" },
+  { url: p5.url, caption: "Learners in hi-vis vests outdoors — a candid moment", category: "Students" },
+  { url: p6.url, caption: "Agriculture programme — student with a fresh harvest of leafy vegetables", category: "Skills & Vocational" },
+  { url: p7.url, caption: "In partnership with the Department of Higher Education & Training", category: "Leadership & Events" },
+  { url: p8.url, caption: "Seamstress programme — vocational skills with a future", category: "Skills & Vocational" },
+  { url: p9.url, caption: "Active learning in our community classrooms", category: "Students" },
+  { url: p10.url, caption: "Gauteng CET College student leadership and representatives", category: "Leadership & Events" },
 ];
 
 const filters: ("All" | Category)[] = ["All", "Students", "Training", "Skills & Vocational", "Leadership & Events"];
@@ -92,7 +80,7 @@ function GalleryPage() {
         className="relative flex items-center justify-center text-white"
         style={{
           height: "40vh",
-          backgroundImage: `url(${studentSpeaker.url})`,
+          backgroundImage: `url(${p3.url})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
