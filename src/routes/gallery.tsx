@@ -13,6 +13,12 @@ import p7 from "../assets/gallery/photo-7.jpeg.asset.json";
 import p8 from "../assets/gallery/photo-8.jpeg.asset.json";
 import p9 from "../assets/gallery/photo-9.jpeg.asset.json";
 import p10 from "../assets/gallery/photo-10.jpeg.asset.json";
+import p11 from "../assets/gallery/photo-11.jpeg.asset.json";
+import p12 from "../assets/gallery/photo-12.jpeg.asset.json";
+import p13 from "../assets/gallery/photo-13.jpeg.asset.json";
+import p14 from "../assets/gallery/photo-14.jpeg.asset.json";
+import p15 from "../assets/gallery/photo-15.jpeg.asset.json";
+import p16 from "../assets/gallery/photo-16.jpeg.asset.json";
 
 type Category = "Students" | "Training" | "Skills & Vocational" | "Leadership & Events";
 
@@ -33,6 +39,12 @@ const photos: GalleryPhoto[] = [
   { url: p8.url, caption: "Seamstress programme — vocational skills with a future", category: "Skills & Vocational" },
   { url: p9.url, caption: "Active learning in our community classrooms", category: "Students" },
   { url: p10.url, caption: "Gauteng CET College student leadership and representatives", category: "Leadership & Events" },
+  { url: p11.url, caption: "Conference session — students engaged in formal learning with DHET partners", category: "Leadership & Events" },
+  { url: p12.url, caption: "Sewing classroom — students at Singer machines working on fabric", category: "Skills & Vocational" },
+  { url: p13.url, caption: "Gauteng CET College students and staff — formal group portrait", category: "Leadership & Events" },
+  { url: p14.url, caption: "Students in discussion — ideas and futures being built", category: "Students" },
+  { url: p15.url, caption: "Digitisation initiative — students receive Tab 60 WiFi tablets", category: "Leadership & Events" },
+  { url: p16.url, caption: "Mrs F.M. Chechile — Acting Principal, Gauteng CET College", category: "Leadership & Events" },
 ];
 
 const filters: ("All" | Category)[] = ["All", "Students", "Training", "Skills & Vocational", "Leadership & Events"];
