@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import hero from "../assets/gallery/photo-02-fire-safety-training.jpeg.asset.json";
 import partnership from "../assets/students-induction.jpeg.asset.json";
-import principal from "../assets/principal.jpeg.asset.json";
+import principal from "../assets/gallery/photo-16.jpeg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({ meta: [
