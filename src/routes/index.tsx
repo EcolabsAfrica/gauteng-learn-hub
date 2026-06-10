@@ -42,7 +42,7 @@ const clusters = [
   { name: "West Rand", staff: "196 lecturers" },
 ];
 
-const galleryTeaser = [g1, g2, g3, g4, g5, g6];
+const galleryTeaser = [g2, g1, g3, g4, g5, g6];
 
 function HomePage() {
   return (
