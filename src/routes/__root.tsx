@@ -80,11 +80,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Gauteng CET College | Community Education & Training" },
       { name: "description", content: "Gauteng Community Education and Training College — quality skills, literacy and vocational programmes for out-of-school youth and adults across Gauteng." },
       { name: "author", content: "Gauteng CET College" },
-      { property: "og:title", content: "Gauteng CET College" },
-      { property: "og:description", content: "Quality community education and training for youth and adults across Gauteng." },
+      { property: "og:title", content: "Gauteng CET College | Community Education & Training" },
+      { property: "og:description", content: "Gauteng Community Education and Training College — quality skills, literacy and vocational programmes for out-of-school youth and adults across Gauteng." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Gauteng CET College | Community Education & Training" },
+      { name: "twitter:description", content: "Gauteng Community Education and Training College — quality skills, literacy and vocational programmes for out-of-school youth and adults across Gauteng." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0bbda2c3-18d9-47a2-aaa1-d5041c0948bd/id-preview-4039ecef--f9db17a1-dc4b-4c4a-b0df-633c0607362f.lovable.app-1781027714507.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0bbda2c3-18d9-47a2-aaa1-d5041c0948bd/id-preview-4039ecef--f9db17a1-dc4b-4c4a-b0df-633c0607362f.lovable.app-1781027714507.png" },
     ],
     links: [
       {
