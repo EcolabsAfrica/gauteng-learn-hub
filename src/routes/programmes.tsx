@@ -2,9 +2,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   BookOpen, GraduationCap, Award, Scissors, Laptop, Cake, Baby,
   HeartPulse, ShoppingBag, Sprout, Briefcase, Plane, Wrench, Gem, Sofa,
+  ShieldCheck, FileText, MapPin,
 } from "lucide-react";
 import hero from "../assets/gallery/photo-09-classroom.jpeg.asset.json";
 import getcImg from "../assets/gallery/gallery-13.jpeg.asset.json";
+import sg1 from "../assets/skills-programmes/skills-group-1.jpeg.asset.json";
+import sg2 from "../assets/skills-programmes/skills-group-2.jpeg.asset.json";
+import sg3 from "../assets/skills-programmes/skills-group-3.jpeg.asset.json";
+import sg4 from "../assets/skills-programmes/skills-group-4.jpeg.asset.json";
+import sg5 from "../assets/skills-programmes/skills-group-5.jpeg.asset.json";
+import wattvillePdf from "../assets/skills-programmes/wattville-accreditation.pdf.asset.json";
+import wedelaPdf from "../assets/skills-programmes/wedela-accreditation.pdf.asset.json";
 
 export const Route = createFileRoute("/programmes")({
   head: () => ({ meta: [
@@ -37,6 +45,29 @@ const skills = [
   { Icon: Gem, name: "Jewellery Manufacturing (select centres)" },
   { Icon: Sofa, name: "Basic Upholstery (select centres)" },
 ];
+
+const qctoProgrammes = [
+  { title: "Basic End User Computing", nqf: "NQF Level 3", credits: 30, code: "SP-240201" },
+  { title: "Intermediate End User Computing", nqf: "NQF Level 4", credits: 20, code: "SP-240202" },
+  { title: "Advanced End User Computing", nqf: "NQF Level 5", credits: 20, code: "SP-240203" },
+];
+
+const qctoCentres = [
+  {
+    name: "Wattville Community Learning Centre",
+    address: "1799 Lesabe Street, Wattville, Benoni, Gauteng, 1501",
+    accreditation: "07-QCTO/SDP220526101809",
+    pdf: wattvillePdf.url,
+  },
+  {
+    name: "Wedela Community Learning Centre",
+    address: "2604 4th Avenue, Wedela, Carletonville, Gauteng, 2499",
+    accreditation: "07-QCTO/SDP220526104112",
+    pdf: wedelaPdf.url,
+  },
+];
+
+const skillsGallery = [sg1, sg2, sg3, sg4, sg5];
 
 function ProgrammesPage() {
   return (
