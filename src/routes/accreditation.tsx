@@ -5,8 +5,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Info, Award, Clock } from "lucide-react";
+import { Info, Award, Clock, FileText } from "lucide-react";
 import heroImg from "../assets/sewing-workshop.jpeg.asset.json";
+import wattvillePdf from "../assets/skills-programmes/wattville-accreditation.pdf.asset.json";
+import wedelaPdf from "../assets/skills-programmes/wedela-accreditation.pdf.asset.json";
 
 export const Route = createFileRoute("/accreditation")({
   head: () => ({
@@ -56,6 +58,8 @@ const accredited = [
       "Cook Assistant",
       "Information Technology End User Computing",
     ],
+    pdf: wattvillePdf.url,
+    pdfLabel: "QCTO Accreditation Letter (07-QCTO/SDP220526101809)",
   },
   {
     name: "City Deep",
@@ -117,7 +121,10 @@ const accredited = [
       "Basic Upholstery",
     ],
   },
-];
+] as Array<{ name: string; programmes: string[]; pdf?: string; pdfLabel?: string }>;
+
+// Wedela is in the accreditation-in-progress list, but the centre now has an accreditation letter
+// for End User Computing programmes. Add the PDF where its entry appears below.
 
 const inProgress = [
   {
@@ -193,7 +200,21 @@ const inProgress = [
       "Assistant Baker",
     ],
   },
-];
+] as Array<{ name: string; programmes: string[]; pdf?: string; pdfLabel?: string }>;
+
+const wedelaEntry = {
+  name: "Wedela",
+  programmes: [
+    "Basic End User Computing (NQF 3)",
+    "Intermediate End User Computing (NQF 4)",
+    "Advanced End User Computing (NQF 5)",
+  ],
+  pdf: wedelaPdf.url,
+  pdfLabel: "QCTO Accreditation Letter (07-QCTO/SDP220526104112)",
+};
+
+// Wedela is now fully accredited — surface it in the accredited list.
+accredited.push(wedelaEntry);
 
 function AccreditationPage() {
   return (
@@ -254,6 +275,17 @@ function AccreditationPage() {
                         <li key={p}>{p}</li>
                       ))}
                     </ul>
+                    {c.pdf && (
+                      <a
+                        href={c.pdf}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-2 inline-flex items-center gap-2 text-primary font-semibold text-sm hover:underline"
+                      >
+                        <FileText size={16} />
+                        {c.pdfLabel ?? "View accreditation letter (PDF)"}
+                      </a>
+                    )}
                   </AccordionContent>
                 </AccordionItem>
               ))}
@@ -293,6 +325,17 @@ function AccreditationPage() {
                         <li key={p}>{p}</li>
                       ))}
                     </ul>
+                    {c.pdf && (
+                      <a
+                        href={c.pdf}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-2 inline-flex items-center gap-2 text-primary font-semibold text-sm hover:underline"
+                      >
+                        <FileText size={16} />
+                        {c.pdfLabel ?? "View accreditation letter (PDF)"}
+                      </a>
+                    )}
                   </AccordionContent>
                 </AccordionItem>
               ))}
