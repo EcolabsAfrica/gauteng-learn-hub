@@ -289,6 +289,9 @@ const wedelaEntry = {
 // Wedela is now fully accredited — surface it in the accredited list.
 accredited.push(wedelaEntry);
 
+// Append additional centres with newly received QCTO accreditation letters.
+accredited.push(...extraAccredited);
+
 function AccreditationPage() {
   return (
     <>
