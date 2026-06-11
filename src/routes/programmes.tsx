@@ -13,6 +13,26 @@ import sg4 from "../assets/skills-programmes/skills-group-4.jpeg.asset.json";
 import sg5 from "../assets/skills-programmes/skills-group-5.jpeg.asset.json";
 import wattvillePdf from "../assets/skills-programmes/wattville-accreditation.pdf.asset.json";
 import wedelaPdf from "../assets/skills-programmes/wedela-accreditation.pdf.asset.json";
+import aaronMoetiPdf from "../assets/accreditation-letters/aaron-moeti.pdf.asset.json";
+import bethsaidaPdf from "../assets/accreditation-letters/bethsaida.pdf.asset.json";
+import chiaweloPdf from "../assets/accreditation-letters/chiawelo.pdf.asset.json";
+import cityDeepPdf from "../assets/accreditation-letters/city-deep.pdf.asset.json";
+import denverPdf from "../assets/accreditation-letters/denver.pdf.asset.json";
+import dwtNtathePdf from "../assets/accreditation-letters/dwt-ntathe.pdf.asset.json";
+import edMafolePdf from "../assets/accreditation-letters/ed-mafole.pdf.asset.json";
+import gaegolelwePdf from "../assets/accreditation-letters/gaegolelwe.pdf.asset.json";
+import gaerobiPdf from "../assets/accreditation-letters/gaerobi.pdf.asset.json";
+import josiahKhumaloPdf from "../assets/accreditation-letters/josiah-khumalo.pdf.asset.json";
+import kwaThemaPdf from "../assets/accreditation-letters/kwa-thema.pdf.asset.json";
+import moepathutsePdf from "../assets/accreditation-letters/moepathutse.pdf.asset.json";
+import pqVundlaPdf from "../assets/accreditation-letters/pq-vundla.pdf.asset.json";
+import reneilwePdf from "../assets/accreditation-letters/reneilwe.pdf.asset.json";
+import setlakalanePdf from "../assets/accreditation-letters/setlakalane-molepo.pdf.asset.json";
+import sydneyMasekoPdf from "../assets/accreditation-letters/sydney-maseko.pdf.asset.json";
+import taamanePdf from "../assets/accreditation-letters/taamane.pdf.asset.json";
+import tembisaPdf from "../assets/accreditation-letters/tembisa.pdf.asset.json";
+import thutomfundoPdf from "../assets/accreditation-letters/thutomfundo.pdf.asset.json";
+import victoryPdf from "../assets/accreditation-letters/victory.pdf.asset.json";
 
 export const Route = createFileRoute("/programmes")({
   head: () => ({ meta: [
@@ -53,6 +73,126 @@ const qctoProgrammes = [
 ];
 
 const qctoCentres = [
+  {
+    name: "Aaron Moeti Community Learning Centre",
+    address: "2 Mosoeu Street, Mopedi Section, Katlehong",
+    accreditation: "07-QCTO/SDP220526100559",
+    pdf: aaronMoetiPdf.url,
+  },
+  {
+    name: "Bethsaida Community Learning Centre",
+    address: "317 Block L, Soshanguve, Pretoria, 0152",
+    accreditation: "07-QCTO/SDP220526112451",
+    pdf: bethsaidaPdf.url,
+  },
+  {
+    name: "Chiawelo Community Learning Centre",
+    address: "1926B Mabalane Street, Senaone, Soweto",
+    accreditation: "07-QCTO/SDP220526102723",
+    pdf: chiaweloPdf.url,
+  },
+  {
+    name: "City Deep Community Learning Centre",
+    address: "100 Heidelberg Road, City Deep, Johannesburg",
+    accreditation: "07-QCTO/SDP220526093309",
+    pdf: cityDeepPdf.url,
+  },
+  {
+    name: "Denver Community Learning Centre",
+    address: "48 Hout Street, Jeppestown, Johannesburg",
+    accreditation: "07-QCTO/SDP220526093553",
+    pdf: denverPdf.url,
+  },
+  {
+    name: "DWT Nthate Community Learning Centre",
+    address: "Plot 1080 Winterveldt, Pretoria, 0198",
+    accreditation: "07-QCTO/SDP220526112227",
+    pdf: dwtNtathePdf.url,
+  },
+  {
+    name: "ED Mafole Community Learning Centre",
+    address: "620B Mamasilanoka Street, Zone 1 Meadowlands, Soweto",
+    accreditation: "07-QCTO/SDP220526103400",
+    pdf: edMafolePdf.url,
+  },
+  {
+    name: "Gaegolelwe Community Learning Centre",
+    address: "1a Motsepe Street, Atteridgeville, Pretoria",
+    accreditation: "07-QCTO/SDP220526094828",
+    pdf: gaegolelwePdf.url,
+  },
+  {
+    name: "Gaerobe Community Learning Centre",
+    address: "420 Mogalakwena & Khutso Street, Soshanguve K, Pretoria",
+    accreditation: "07-QCTO/SDP220526113049",
+    pdf: gaerobiPdf.url,
+  },
+  {
+    name: "Josiah Khumalo Community Learning Centre",
+    address: "1517 Mshengu Street, Emdeni, Soweto",
+    accreditation: "07-QCTO/SDP220526103108",
+    pdf: josiahKhumaloPdf.url,
+  },
+  {
+    name: "Kwa-Thema Community Learning Centre",
+    address: "Lefa Ifa Secondary School, 1488 Sam Ngema Drive, Kwa-Thema Extension 1, Springs",
+    accreditation: "07-QCTO/SDP220526095320",
+    pdf: kwaThemaPdf.url,
+  },
+  {
+    name: "Moepathutse Community Learning Centre",
+    address: "287 Pelo Street, Zone 1 Ga Rankuwa, Pretoria",
+    accreditation: "07-QCTO/SDP220526113338",
+    pdf: moepathutsePdf.url,
+  },
+  {
+    name: "PQ Vundla Community Learning Centre",
+    address: "1822 Molapo Extension, Molele Street, Soweto",
+    accreditation: "07-QCTO/SDP220526093806",
+    pdf: pqVundlaPdf.url,
+  },
+  {
+    name: "Reneilwe Community Learning Centre",
+    address: "Masingita Primary School, 10945 Lefakong Street, Mamelodi East, Pretoria",
+    accreditation: "07-QCTO/SDP220526095058",
+    pdf: reneilwePdf.url,
+  },
+  {
+    name: "Setlakalane Molepo Community Learning Centre",
+    address: "730 Madimabe Street, Tladi, Soweto",
+    accreditation: "07-QCTO/SDP220526094034",
+    pdf: setlakalanePdf.url,
+  },
+  {
+    name: "Sydney Maseko Community Learning Centre",
+    address: "3134 Diokane Street, Dube, Soweto",
+    accreditation: "07-QCTO/SDP220526103753",
+    pdf: sydneyMasekoPdf.url,
+  },
+  {
+    name: "Taamane Community Learning Centre",
+    address: "287 Iridium Street, Ekandustria, Bronkhorstspruit",
+    accreditation: "07-QCTO/SDP220526113805",
+    pdf: taamanePdf.url,
+  },
+  {
+    name: "Tembisa Community Learning Centre",
+    address: "180 Andrew Mapheto Drive, 1 Ibazelo Section, Tembisa",
+    accreditation: "07-QCTO/SDP220526092013",
+    pdf: tembisaPdf.url,
+  },
+  {
+    name: "Thutomfundo Community Learning Centre",
+    address: "109 Kubeka Street, Vosloorus",
+    accreditation: "07-QCTO/SDP220526101236",
+    pdf: thutomfundoPdf.url,
+  },
+  {
+    name: "Victory Community Learning Centre",
+    address: "1460 Block G, Soshanguve, Pretoria, 0152",
+    accreditation: "07-QCTO/SDP220526095551",
+    pdf: victoryPdf.url,
+  },
   {
     name: "Wattville Community Learning Centre",
     address: "1799 Lesabe Street, Wattville, Benoni, Gauteng, 1501",
