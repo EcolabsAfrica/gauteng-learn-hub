@@ -9,6 +9,25 @@ import { Info, Award, Clock, FileText } from "lucide-react";
 import heroImg from "../assets/sewing-workshop.jpeg.asset.json";
 import wattvillePdf from "../assets/skills-programmes/wattville-accreditation.pdf.asset.json";
 import wedelaPdf from "../assets/skills-programmes/wedela-accreditation.pdf.asset.json";
+import aaronMoetiPdf from "../assets/accreditation-letters/aaron-moeti.pdf.asset.json";
+import bethsaidaPdf from "../assets/accreditation-letters/bethsaida.pdf.asset.json";
+import chiaweloPdf from "../assets/accreditation-letters/chiawelo.pdf.asset.json";
+import cityDeepPdf from "../assets/accreditation-letters/city-deep.pdf.asset.json";
+import denverPdf from "../assets/accreditation-letters/denver.pdf.asset.json";
+import dwtNtathePdf from "../assets/accreditation-letters/dwt-ntathe.pdf.asset.json";
+import edMafolePdf from "../assets/accreditation-letters/ed-mafole.pdf.asset.json";
+import gaegolelwePdf from "../assets/accreditation-letters/gaegolelwe.pdf.asset.json";
+import gaerobiPdf from "../assets/accreditation-letters/gaerobi.pdf.asset.json";
+import josiahKhumaloPdf from "../assets/accreditation-letters/josiah-khumalo.pdf.asset.json";
+import kwaThemaPdf from "../assets/accreditation-letters/kwa-thema.pdf.asset.json";
+import moepathutsePdf from "../assets/accreditation-letters/moepathutse.pdf.asset.json";
+import pqVundlaPdf from "../assets/accreditation-letters/pq-vundla.pdf.asset.json";
+import reneilwePdf from "../assets/accreditation-letters/reneilwe.pdf.asset.json";
+import sydneyMasekoPdf from "../assets/accreditation-letters/sydney-maseko.pdf.asset.json";
+import taamanePdf from "../assets/accreditation-letters/taamane.pdf.asset.json";
+import tembisaPdf from "../assets/accreditation-letters/tembisa.pdf.asset.json";
+import thutomfundoPdf from "../assets/accreditation-letters/thutomfundo.pdf.asset.json";
+import victoryPdf from "../assets/accreditation-letters/victory.pdf.asset.json";
 
 export const Route = createFileRoute("/accreditation")({
   head: () => ({
@@ -48,6 +67,8 @@ const accredited = [
       "Computer and Digital Support Assistance",
       "Seamstress (RPL process)",
     ],
+    pdf: kwaThemaPdf.url,
+    pdfLabel: "QCTO Accreditation Letter (PDF)",
   },
   {
     name: "Wattville",
@@ -64,10 +85,14 @@ const accredited = [
   {
     name: "City Deep",
     programmes: ["Computer and Digital Support Assistance"],
+    pdf: cityDeepPdf.url,
+    pdfLabel: "QCTO Accreditation Letter (PDF)",
   },
   {
     name: "Sydney Maseko",
     programmes: ["Seamstress", "Jewellery Manufacturing"],
+    pdf: sydneyMasekoPdf.url,
+    pdfLabel: "QCTO Accreditation Letter (PDF)",
   },
   {
     name: "DWT Ntathe",
@@ -76,6 +101,8 @@ const accredited = [
       "Seamstress",
       "Assistant Baker",
     ],
+    pdf: dwtNtathePdf.url,
+    pdfLabel: "QCTO Accreditation Letter (PDF)",
   },
   {
     name: "Thutomfundo",
@@ -83,6 +110,8 @@ const accredited = [
       "Seamstress",
       "Computer and Digital Support Assistance",
     ],
+    pdf: thutomfundoPdf.url,
+    pdfLabel: "QCTO Accreditation Letter (PDF)",
   },
   {
     name: "Mamelodi",
@@ -100,6 +129,8 @@ const accredited = [
       "Computer and Digital Support Assistance",
       "Seamstress",
     ],
+    pdf: bethsaidaPdf.url,
+    pdfLabel: "QCTO Accreditation Letter (PDF)",
   },
   {
     name: "21 Battalion St Charles",
@@ -112,6 +143,8 @@ const accredited = [
   {
     name: "Tembisa",
     programmes: ["Computer and Digital Support Assistance"],
+    pdf: tembisaPdf.url,
+    pdfLabel: "QCTO Accreditation Letter (PDF)",
   },
   {
     name: "Sharpeville",
@@ -134,6 +167,8 @@ const inProgress = [
       "Cook Assistance",
       "Seamstress (RPL)",
     ],
+    pdf: gaegolelwePdf.url,
+    pdfLabel: "QCTO Accreditation Letter (PDF)",
   },
   {
     name: "Kagiso",
@@ -142,6 +177,8 @@ const inProgress = [
   {
     name: "Chiawelo",
     programmes: ["Computer and Digital Support Assistance"],
+    pdf: chiaweloPdf.url,
+    pdfLabel: "QCTO Accreditation Letter (PDF)",
   },
   {
     name: "Vunanimfundo",
@@ -160,6 +197,8 @@ const inProgress = [
       "Computer and Digital Support Assistance",
       "Seamstress",
     ],
+    pdf: moepathutsePdf.url,
+    pdfLabel: "QCTO Accreditation Letter (PDF)",
   },
   {
     name: "Victory",
@@ -167,14 +206,20 @@ const inProgress = [
       "Computer and Digital Support Assistance",
       "Seamstress",
     ],
+    pdf: victoryPdf.url,
+    pdfLabel: "QCTO Accreditation Letter (PDF)",
   },
   {
     name: "PQ Vundla",
     programmes: ["Computer and Digital Support Assistance"],
+    pdf: pqVundlaPdf.url,
+    pdfLabel: "QCTO Accreditation Letter (PDF)",
   },
   {
     name: "Denver",
     programmes: ["Computer and Digital Support Assistance"],
+    pdf: denverPdf.url,
+    pdfLabel: "QCTO Accreditation Letter (PDF)",
   },
   {
     name: "Setlakalane",
@@ -187,10 +232,14 @@ const inProgress = [
       "Seamstress",
       "Assistant Baker",
     ],
+    pdf: aaronMoetiPdf.url,
+    pdfLabel: "QCTO Accreditation Letter (PDF)",
   },
   {
     name: "Reneilwe",
     programmes: ["Computer and Digital Support Assistance"],
+    pdf: reneilwePdf.url,
+    pdfLabel: "QCTO Accreditation Letter (PDF)",
   },
   {
     name: "Taamane",
@@ -199,6 +248,30 @@ const inProgress = [
       "Seamstress",
       "Assistant Baker",
     ],
+    pdf: taamanePdf.url,
+    pdfLabel: "QCTO Accreditation Letter (PDF)",
+  },
+] as Array<{ name: string; programmes: string[]; pdf?: string; pdfLabel?: string }>;
+
+// Additional accreditation letters for centres not yet listed above.
+const extraAccredited = [
+  {
+    name: "ED Mafole",
+    programmes: ["Occupational programmes (per QCTO accreditation letter)"],
+    pdf: edMafolePdf.url,
+    pdfLabel: "QCTO Accreditation Letter (PDF)",
+  },
+  {
+    name: "Gaerobi",
+    programmes: ["Occupational programmes (per QCTO accreditation letter)"],
+    pdf: gaerobiPdf.url,
+    pdfLabel: "QCTO Accreditation Letter (PDF)",
+  },
+  {
+    name: "Josiah Khumalo",
+    programmes: ["Occupational programmes (per QCTO accreditation letter)"],
+    pdf: josiahKhumaloPdf.url,
+    pdfLabel: "QCTO Accreditation Letter (PDF)",
   },
 ] as Array<{ name: string; programmes: string[]; pdf?: string; pdfLabel?: string }>;
 
@@ -215,6 +288,9 @@ const wedelaEntry = {
 
 // Wedela is now fully accredited — surface it in the accredited list.
 accredited.push(wedelaEntry);
+
+// Append additional centres with newly received QCTO accreditation letters.
+accredited.push(...extraAccredited);
 
 function AccreditationPage() {
   return (
