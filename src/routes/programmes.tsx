@@ -2,9 +2,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   BookOpen, GraduationCap, Award, Scissors, Laptop, Cake, Baby,
   HeartPulse, ShoppingBag, Sprout, Briefcase, Plane, Wrench, Gem, Sofa,
+  ShieldCheck, FileText, MapPin,
 } from "lucide-react";
 import hero from "../assets/gallery/photo-09-classroom.jpeg.asset.json";
 import getcImg from "../assets/gallery/gallery-13.jpeg.asset.json";
+import sg1 from "../assets/skills-programmes/skills-group-1.jpeg.asset.json";
+import sg2 from "../assets/skills-programmes/skills-group-2.jpeg.asset.json";
+import sg3 from "../assets/skills-programmes/skills-group-3.jpeg.asset.json";
+import sg4 from "../assets/skills-programmes/skills-group-4.jpeg.asset.json";
+import sg5 from "../assets/skills-programmes/skills-group-5.jpeg.asset.json";
+import wattvillePdf from "../assets/skills-programmes/wattville-accreditation.pdf.asset.json";
+import wedelaPdf from "../assets/skills-programmes/wedela-accreditation.pdf.asset.json";
 
 export const Route = createFileRoute("/programmes")({
   head: () => ({ meta: [
@@ -37,6 +45,29 @@ const skills = [
   { Icon: Gem, name: "Jewellery Manufacturing (select centres)" },
   { Icon: Sofa, name: "Basic Upholstery (select centres)" },
 ];
+
+const qctoProgrammes = [
+  { title: "Basic End User Computing", nqf: "NQF Level 3", credits: 30, code: "SP-240201" },
+  { title: "Intermediate End User Computing", nqf: "NQF Level 4", credits: 20, code: "SP-240202" },
+  { title: "Advanced End User Computing", nqf: "NQF Level 5", credits: 20, code: "SP-240203" },
+];
+
+const qctoCentres = [
+  {
+    name: "Wattville Community Learning Centre",
+    address: "1799 Lesabe Street, Wattville, Benoni, Gauteng, 1501",
+    accreditation: "07-QCTO/SDP220526101809",
+    pdf: wattvillePdf.url,
+  },
+  {
+    name: "Wedela Community Learning Centre",
+    address: "2604 4th Avenue, Wedela, Carletonville, Gauteng, 2499",
+    accreditation: "07-QCTO/SDP220526104112",
+    pdf: wedelaPdf.url,
+  },
+];
+
+const skillsGallery = [sg1, sg2, sg3, sg4, sg5];
 
 function ProgrammesPage() {
   return (
@@ -182,6 +213,86 @@ function ProgrammesPage() {
           <p className="mt-5 text-white/95 text-lg leading-relaxed max-w-3xl mx-auto">
             We equip our learners not just with skills, but with the mindset and tools to create their own economic opportunities. Entrepreneurship modules are integrated across programmes and offered as standalone short courses.
           </p>
+        </div>
+      </section>
+
+      {/* PROGRAMME 7: QCTO-ACCREDITED SKILLS PROGRAMMES (informal but accredited) */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="flex items-center gap-3">
+            <ShieldCheck className="text-secondary" size={32} />
+            <span className="text-secondary font-semibold uppercase tracking-wider text-sm">QCTO Accredited</span>
+          </div>
+          <h2 className="mt-3 text-primary font-bold text-2xl md:text-3xl">
+            Accredited Short Skills Programmes
+          </h2>
+          <p className="mt-5 text-foreground/80 leading-relaxed max-w-4xl">
+            These are short, practical skills programmes — informal in format and shorter than a full qualification — but fully accredited by the Quality Council for Trades and Occupations (QCTO) as part of our Skills Development Provider status. Learners gain nationally recognised, occupationally relevant skills in a flexible setting.
+          </p>
+
+          {/* Programmes table */}
+          <div className="mt-10 overflow-x-auto rounded-xl border border-gray-200">
+            <table className="w-full text-sm md:text-base">
+              <thead className="bg-alt-bg text-navy">
+                <tr>
+                  <th className="text-left px-4 py-3 font-bold">Programme</th>
+                  <th className="text-left px-4 py-3 font-bold">NQF Level</th>
+                  <th className="text-left px-4 py-3 font-bold">Credits</th>
+                  <th className="text-left px-4 py-3 font-bold">Code</th>
+                </tr>
+              </thead>
+              <tbody>
+                {qctoProgrammes.map((p) => (
+                  <tr key={p.code} className="border-t border-gray-200">
+                    <td className="px-4 py-3 font-semibold text-navy">{p.title}</td>
+                    <td className="px-4 py-3 text-foreground/80">{p.nqf}</td>
+                    <td className="px-4 py-3 text-foreground/80">{p.credits}</td>
+                    <td className="px-4 py-3 text-foreground/70 font-mono text-xs">{p.code}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Accredited centres */}
+          <h3 className="mt-12 text-navy font-bold text-xl">Offered at these accredited centres</h3>
+          <div className="mt-5 grid sm:grid-cols-2 gap-5">
+            {qctoCentres.map((c) => (
+              <div key={c.accreditation} className="bg-alt-bg rounded-xl border-l-4 border-secondary p-6">
+                <h4 className="text-navy font-bold">{c.name}</h4>
+                <div className="mt-3 flex items-start gap-2 text-sm text-foreground/75">
+                  <MapPin size={16} className="shrink-0 mt-0.5 text-secondary" />
+                  <span>{c.address}</span>
+                </div>
+                <p className="mt-3 text-xs text-foreground/60">
+                  Accreditation No: <span className="font-mono">{c.accreditation}</span><br />
+                  Period: 15 May 2026 — 14 May 2031
+                </p>
+                <a
+                  href={c.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 text-primary font-semibold text-sm hover:underline"
+                >
+                  <FileText size={16} /> View accreditation letter (PDF)
+                </a>
+              </div>
+            ))}
+          </div>
+
+          {/* Photo gallery */}
+          <h3 className="mt-14 text-navy font-bold text-xl">Our learners in action</h3>
+          <div className="mt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+            {skillsGallery.map((img, i) => (
+              <img
+                key={i}
+                src={img.url}
+                alt={`Gauteng CET College accredited skills programme learners — group photo ${i + 1}`}
+                loading="lazy"
+                className="w-full aspect-square object-cover rounded-lg shadow-sm hover:shadow-md transition"
+              />
+            ))}
+          </div>
         </div>
       </section>
 
