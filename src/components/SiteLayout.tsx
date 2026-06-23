@@ -18,7 +18,7 @@ export function SiteLayout() {
   const [open, setOpen] = useState(false);
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground font-sans">
-      <header className="sticky top-0 z-40 bg-white text-foreground shadow-sm border-b border-black/5">
+      <header className="relative z-40 bg-white text-foreground shadow-sm border-b border-black/5">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-4 py-4">
             <Link to="/" className="flex items-center shrink-0" aria-label="Department of Higher Education and Training">
