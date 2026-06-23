@@ -43,8 +43,8 @@ const photos: GalleryPhoto[] = [
   { url: p12.url, caption: "Sewing classroom — students at Singer machines working on fabric", category: "Skills & Vocational" },
   { url: p13.url, caption: "Gauteng CET College students and staff — formal group portrait", category: "Leadership & Events" },
   { url: p14.url, caption: "Students in discussion — ideas and futures being built", category: "Students" },
-  { url: p15.url, caption: "Mrs F.M. Chechile — Acting Principal, Gauteng CET College", category: "Leadership & Events" },
   { url: p16.url, caption: "Mrs F.M. Chechile — Acting Principal, Gauteng CET College", category: "Leadership & Events" },
+  { url: p15.url, caption: "Mrs F.M. Chechile — Acting Principal, Gauteng CET College", category: "Leadership & Events" },
 ];
 
 const filters: ("All" | Category)[] = ["All", "Students", "Training", "Skills & Vocational", "Leadership & Events"];
