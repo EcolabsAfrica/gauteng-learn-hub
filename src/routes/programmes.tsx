@@ -226,6 +226,9 @@ function ProgrammesPage() {
       {/* INTRO */}
       <section className="bg-white">
         <div className="mx-auto max-w-[760px] px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
+          <h2 className="text-secondary font-bold text-2xl md:text-3xl mb-6">
+            Level 1–4, Grade 12 NSC and SC
+          </h2>
           <p className="text-foreground/80 text-lg leading-relaxed">
             The Gauteng CET College offers programmes defined by its Programme Qualification Mix (PQM), designed to meet learners wherever they are — from basic literacy to full Grade 12 and vocational qualifications.
           </p>

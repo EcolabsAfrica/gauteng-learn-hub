@@ -292,6 +292,10 @@ accredited.push(wedelaEntry);
 // Append additional centres with newly received QCTO accreditation letters.
 accredited.push(...extraAccredited);
 
+// Sort centres alphabetically by name to avoid conflict / make lookup easy.
+accredited.sort((a, b) => a.name.localeCompare(b.name));
+inProgress.sort((a, b) => a.name.localeCompare(b.name));
+
 function AccreditationPage() {
   return (
     <>

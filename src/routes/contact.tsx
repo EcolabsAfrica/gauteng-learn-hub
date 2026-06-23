@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { MapPin, Phone, Globe, Clock, Mail } from "lucide-react";
+import { MapPin, Phone, Globe, Clock, Mail, MessageCircle } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -75,6 +75,20 @@ function ContactPage() {
                     <a href="tel:0109001153" className="hover:text-primary">010 900 1153</a>
                     {" / "}
                     <a href="tel:0109001166" className="hover:text-primary">010 900 1166</a>
+                  </span>
+                </div>
+                <div className="flex gap-3">
+                  <MessageCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                  <span className="text-foreground/80 text-sm md:text-base">
+                    WhatsApp:{" "}
+                    <a
+                      href="https://wa.me/27664390156"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary"
+                    >
+                      066 439 0156
+                    </a>
                   </span>
                 </div>
                 <div className="flex gap-3">
@@ -226,7 +240,7 @@ function ContactPage() {
               Twitter/X
             </a>
             <a
-              href="https://www.tiktok.com/@gautengcetcollege/"
+              href="https://www.tiktok.com/@gautengcetc"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-white font-semibold hover:opacity-90 transition"
@@ -248,7 +262,9 @@ function ContactPage() {
               YouTube
             </a>
             <a
-              href="#"
+              href="https://wa.me/27664390156"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-white font-semibold hover:opacity-90 transition"
             >
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
