@@ -20,7 +20,7 @@ export function SiteLayout() {
     <div className="min-h-screen flex flex-col bg-background text-foreground font-sans">
       <header className="sticky top-0 z-40 bg-white text-foreground shadow-sm border-b border-black/5">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex h-24 items-center justify-between gap-4">
-          <Link to="/" className="flex items-center justify-between gap-4 flex-1 min-w-0">
+          <Link to="/" className="flex items-center gap-10 md:gap-16 shrink-0">
             <img src={dhetLogo.url} alt="Department of Higher Education and Training, Republic of South Africa" className="h-20 w-auto object-contain" />
             <img src={cetLogo.url} alt="Gauteng CET College" className="h-12 w-auto object-contain" />
           </Link>
