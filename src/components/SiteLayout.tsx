@@ -79,9 +79,9 @@ export function SiteLayout() {
       <footer className="bg-navy text-navy-foreground mt-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-3">
           <div>
-            <div className="flex items-center justify-between gap-6 mb-4 bg-white/95 rounded-md p-3 w-full max-w-sm">
-              <img src={dhetLogo.url} alt="DHET" className="h-20 w-auto object-contain" />
-              <img src={cetLogo.url} alt="Gauteng CET College" className="h-12 w-auto object-contain" />
+            <div className="mb-4 flex items-center gap-4 bg-white/95 rounded-md p-4 w-full max-w-sm">
+              <img src={dhetLogo.url} alt="DHET" className="h-16 sm:h-20 w-auto object-contain shrink-0" />
+              <img src={cetLogo.url} alt="Gauteng CET College" className="h-10 sm:h-12 w-auto object-contain shrink-0" />
             </div>
             <h3 className="font-bold text-lg">Gauteng CET College</h3>
             <p className="text-sm opacity-90 mt-1">Institution of choice driving social change.</p>
