@@ -29,6 +29,7 @@ import rot17 from "../assets/rotating/pic_2.jpeg.asset.json";
 import rot18 from "../assets/rotating/pic_3.jpeg.asset.json";
 import rot19 from "../assets/rotating/pic_5_1.jpeg.asset.json";
 import rot20 from "../assets/rotating/pic_12.jpeg.asset.json";
+import rot21 from "../assets/rotating/328108_2.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -65,7 +66,7 @@ const clusters = [
 
 const galleryTeaser = [g2, g1, g3, g4, g5, g6];
 
-const rotatingImages: { url: string }[] = [rot1, rot2, rot3, rot4, rot5, rot6, rot7, rot8, rot9, rot10, rot11, rot12, rot13, rot14, rot15, rot16, rot17, rot18, rot19, rot20];
+const rotatingImages: { url: string }[] = [rot1, rot2, rot3, rot4, rot5, rot6, rot7, rot8, rot9, rot10, rot11, rot12, rot13, rot14, rot15, rot16, rot17, rot18, rot19, rot20, rot21];
 
 function RotatingImage({ className }: { className?: string }) {
   const [idx, setIdx] = useState(0);
