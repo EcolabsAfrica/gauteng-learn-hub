@@ -9,27 +9,27 @@ import g3 from "../assets/gallery/gallery-13.jpeg.asset.json";
 import g4 from "../assets/gallery/gallery-15.jpeg.asset.json";
 import g5 from "../assets/gallery/gallery-17.jpeg.asset.json";
 import g6 from "../assets/gallery/gallery-19.jpeg.asset.json";
-import rot1 from "../assets/rotating/pic_14.jpeg.asset.json";
-import rot2 from "../assets/rotating/pic1.jpeg.asset.json";
-import rot3 from "../assets/rotating/pic_15.jpeg.asset.json";
-import rot4 from "../assets/rotating/pic_13_1.jpeg.asset.json";
-import rot5 from "../assets/rotating/pic_8_1.jpeg.asset.json";
-import rot6 from "../assets/rotating/pic_11_1.jpeg.asset.json";
-import rot7 from "../assets/rotating/pic_9_1.jpeg.asset.json";
-import rot8 from "../assets/rotating/pic_10_1.jpeg.asset.json";
-import rot9 from "../assets/rotating/pic_7_1.jpeg.asset.json";
-import rot10 from "../assets/rotating/pic_6_1.jpeg.asset.json";
-import rot11 from "../assets/rotating/1.jpeg.asset.json";
-import rot12 from "../assets/rotating/328462.jpg.asset.json";
-import rot13 from "../assets/rotating/328466_1.jpg.asset.json";
-import rot14 from "../assets/rotating/328536_1.jpg.asset.json";
-import rot15 from "../assets/rotating/328909_1.jpg.asset.json";
-import rot16 from "../assets/rotating/426554_1.jpg.asset.json";
-import rot17 from "../assets/rotating/pic_2.jpeg.asset.json";
-import rot18 from "../assets/rotating/pic_3.jpeg.asset.json";
-import rot19 from "../assets/rotating/pic_5_1.jpeg.asset.json";
-import rot20 from "../assets/rotating/pic_12.jpeg.asset.json";
-import rot21 from "../assets/rotating/328108_2.jpg.asset.json";
+import imgLeadership from "../assets/rotating/328108_2.jpg.asset.json";
+import imgGrads4 from "../assets/rotating/328536_1.jpg.asset.json";
+import imgGradsOutdoor from "../assets/rotating/328462.jpg.asset.json";
+import imgGradsHall from "../assets/rotating/328466_1.jpg.asset.json";
+import imgGradsSelfie from "../assets/rotating/328909_1.jpg.asset.json";
+import imgComputerLab from "../assets/rotating/426554_1.jpg.asset.json";
+import imgPostersWall from "../assets/rotating/pic1.jpeg.asset.json";
+import imgPresentation from "../assets/rotating/1.jpeg.asset.json";
+import imgBeading from "../assets/rotating/pic_12.jpeg.asset.json";
+import imgWelding from "../assets/rotating/pic_2.jpeg.asset.json";
+import imgBaking from "../assets/rotating/pic_3.jpeg.asset.json";
+import imgBricklaying from "../assets/rotating/pic_5_1.jpeg.asset.json";
+import imgCellphone from "../assets/rotating/pic_6_1.jpeg.asset.json";
+import imgITSupport from "../assets/rotating/pic_7_1.jpeg.asset.json";
+import imgAgriTrade from "../assets/rotating/pic_10_1.jpeg.asset.json";
+import imgECD from "../assets/rotating/pic_9_1.jpeg.asset.json";
+import imgPineGel from "../assets/rotating/pic_11_1.jpeg.asset.json";
+import imgPlantProd from "../assets/rotating/pic_8_1.jpeg.asset.json";
+import imgPottery from "../assets/rotating/pic_13_1.jpeg.asset.json";
+import imgNailBeauty from "../assets/rotating/pic_15.jpeg.asset.json";
+import imgKitchen from "../assets/rotating/pic_14.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -66,7 +66,29 @@ const clusters = [
 
 const galleryTeaser = [g2, g1, g3, g4, g5, g6];
 
-const rotatingImages: { url: string }[] = [rot1, rot2, rot3, rot4, rot5, rot6, rot7, rot8, rot9, rot10, rot11, rot12, rot13, rot14, rot15, rot16, rot17, rot18, rot19, rot20, rot21];
+const rotatingImages: { url: string; caption?: string }[] = [
+  { url: imgLeadership.url },
+  { url: imgGrads4.url },
+  { url: imgGradsOutdoor.url },
+  { url: imgGradsHall.url },
+  { url: imgGradsSelfie.url },
+  { url: imgComputerLab.url },
+  { url: imgPostersWall.url },
+  { url: imgPresentation.url },
+  { url: imgBeading.url, caption: "Non-Formal Skills Programme: Beading – Pretoria Central" },
+  { url: imgWelding.url, caption: "Occupational Skills Programme: Welding – St Charles CLC" },
+  { url: imgBaking.url },
+  { url: imgBricklaying.url, caption: "Occupational Skills Programme: Bricklaying – Aaron Moeti CLC" },
+  { url: imgCellphone.url, caption: "Accredited Skills Programme: Cellphone Repair – Forcheville" },
+  { url: imgITSupport.url, caption: "Learnership: IT Technical Support – Wedela CLC" },
+  { url: imgAgriTrade.url, caption: "Learnership: Agri-Trade Process – Duduza CLC" },
+  { url: imgECD.url, caption: "Learnership: Early Childhood Development – Diepkloof CLC" },
+  { url: imgPineGel.url, caption: "Non-Formal Skills Programme: Pine-Gel – Wattville CLC" },
+  { url: imgPlantProd.url, caption: "Learnership: Plant Production – Gaerobe" },
+  { url: imgPottery.url, caption: "Non-Formal Skills Programme: Pottery – Sydney Maseko" },
+  { url: imgNailBeauty.url, caption: "Infrastructure: Nail and Beauty – Kwazini CLC" },
+  { url: imgKitchen.url, caption: "Infrastructure: Aaron Moeti Kitchen" },
+];
 
 function RotatingImage({ className }: { className?: string }) {
   const [idx, setIdx] = useState(0);
@@ -80,10 +102,15 @@ function RotatingImage({ className }: { className?: string }) {
         <img
           key={i}
           src={img.url}
-          alt="Programme showcase"
+          alt={img.caption ?? "Programme showcase"}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === idx ? "opacity-100" : "opacity-0"}`}
         />
       ))}
+      {rotatingImages[idx].caption && (
+        <div className="absolute top-0 left-0 right-0 bg-secondary/90 text-white text-center font-semibold text-sm md:text-base px-4 py-2 z-10">
+          {rotatingImages[idx].caption}
+        </div>
+      )}
       <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         {rotatingImages.map((_, i) => (
           <button
