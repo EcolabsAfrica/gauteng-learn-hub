@@ -17,7 +17,6 @@ import p11 from "../assets/gallery/photo-11.jpeg.asset.json";
 import p12 from "../assets/gallery/photo-12.jpeg.asset.json";
 import p13 from "../assets/gallery/photo-13.jpeg.asset.json";
 import p14 from "../assets/gallery/photo-14.jpeg.asset.json";
-import p16 from "../assets/gallery/photo-16.jpeg.asset.json";
 import p15 from "../assets/principal-new.jpeg.asset.json";
 
 type Category = "Students" | "Training" | "Skills & Vocational" | "Leadership & Events";
@@ -43,7 +42,6 @@ const photos: GalleryPhoto[] = [
   { url: p12.url, caption: "Sewing classroom — students at Singer machines working on fabric", category: "Skills & Vocational" },
   { url: p13.url, caption: "Gauteng CET College students and staff — formal group portrait", category: "Leadership & Events" },
   { url: p14.url, caption: "Students in discussion — ideas and futures being built", category: "Students" },
-  { url: p16.url, caption: "Mrs F.M. Chechile — Acting Principal, Gauteng CET College", category: "Leadership & Events" },
   { url: p15.url, caption: "Mrs F.M. Chechile — Acting Principal, Gauteng CET College", category: "Leadership & Events" },
 ];
 
