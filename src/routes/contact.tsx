@@ -182,7 +182,7 @@ function ContactPage() {
           <h2 className="text-foreground/60 font-bold text-2xl md:text-3xl">Follow Us</h2>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a
-              href="https://www.facebook.com/100038071645314/"
+              href="https://www.facebook.com/p/Gauteng-Community-Education-and-Training-College-100038071645314/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-[#1877F2] px-6 py-3 text-white font-semibold hover:opacity-90 transition"
@@ -226,7 +226,7 @@ function ContactPage() {
               Twitter/X
             </a>
             <a
-              href="https://www.tiktok.com/@gautengcetcollege"
+              href="https://www.tiktok.com/@gautengcetcollege/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-white font-semibold hover:opacity-90 transition"
@@ -237,7 +237,7 @@ function ContactPage() {
               TikTok
             </a>
             <a
-              href="https://www.youtube.com/@gautengcetacademicsdepartm6489"
+              href="https://www.youtube.com/channel/UCVyEL6afRmPBHxc_yHE45Pg"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-[#FF0000] px-6 py-3 text-white font-semibold hover:opacity-90 transition"
