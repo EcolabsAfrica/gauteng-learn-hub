@@ -77,7 +77,7 @@ export function SiteLayout() {
       </main>
 
       <footer className="bg-navy text-navy-foreground mt-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-3">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 grid gap-8 lg:grid-cols-3">
           <div>
             <div className="mb-4 flex items-center gap-4 bg-white/95 rounded-md p-4 w-full max-w-sm">
               <img src={dhetLogo.url} alt="DHET" className="h-16 sm:h-20 w-auto object-contain shrink-0" />
