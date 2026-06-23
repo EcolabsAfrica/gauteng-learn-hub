@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BookOpen, GraduationCap, Wrench, Briefcase, Check } from "lucide-react";
+import { useEffect, useState } from "react";
 import hero from "../assets/gallery/photo-09-classroom.jpeg.asset.json";
 import about from "../assets/gallery/gallery-3.jpeg.asset.json";
 import g1 from "../assets/gallery/gallery-9.jpeg.asset.json";
@@ -8,6 +9,16 @@ import g3 from "../assets/gallery/gallery-13.jpeg.asset.json";
 import g4 from "../assets/gallery/gallery-15.jpeg.asset.json";
 import g5 from "../assets/gallery/gallery-17.jpeg.asset.json";
 import g6 from "../assets/gallery/gallery-19.jpeg.asset.json";
+import rot1 from "../assets/rotating/pic_14.jpeg.asset.json";
+import rot2 from "../assets/rotating/pic1.jpeg.asset.json";
+import rot3 from "../assets/rotating/pic_15.jpeg.asset.json";
+import rot4 from "../assets/rotating/pic_13_1.jpeg.asset.json";
+import rot5 from "../assets/rotating/pic_8_1.jpeg.asset.json";
+import rot6 from "../assets/rotating/pic_11_1.jpeg.asset.json";
+import rot7 from "../assets/rotating/pic_9_1.jpeg.asset.json";
+import rot8 from "../assets/rotating/pic_10_1.jpeg.asset.json";
+import rot9 from "../assets/rotating/pic_7_1.jpeg.asset.json";
+import rot10 from "../assets/rotating/pic_6_1.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -43,6 +54,38 @@ const clusters = [
 ];
 
 const galleryTeaser = [g2, g1, g3, g4, g5, g6];
+
+const rotatingImages: { url: string }[] = [rot1, rot2, rot3, rot4, rot5, rot6, rot7, rot8, rot9, rot10];
+
+function RotatingImage({ className }: { className?: string }) {
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setIdx((i) => (i + 1) % rotatingImages.length), 4000);
+    return () => clearInterval(id);
+  }, []);
+  return (
+    <div className={`relative overflow-hidden rounded-2xl shadow-xl ${className ?? ""}`}>
+      {rotatingImages.map((img, i) => (
+        <img
+          key={i}
+          src={img.url}
+          alt="Programme showcase"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === idx ? "opacity-100" : "opacity-0"}`}
+        />
+      ))}
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+        {rotatingImages.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setIdx(i)}
+            aria-label={`Show image ${i + 1}`}
+            className={`h-2 rounded-full transition-all ${i === idx ? "w-6 bg-white" : "w-2 bg-white/60"}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function HomePage() {
   return (
@@ -98,11 +141,7 @@ function HomePage() {
       {/* SECTION 3: ABOUT */}
       <section className="bg-alt-bg">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24 grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <img
-            src={about.url}
-            alt="Students in discussion"
-            className="w-full h-full max-h-[480px] object-cover rounded-2xl shadow-xl"
-          />
+          <RotatingImage className="w-full aspect-[4/3] max-h-[480px]" />
           <div>
             <p className="text-secondary font-semibold uppercase tracking-widest text-sm">Who We Are</p>
             <h2 className="mt-3 text-navy font-bold text-3xl md:text-4xl">Education for Every South African</h2>
