@@ -215,7 +215,9 @@ function ContactPage() {
               Instagram
             </a>
             <a
-              href="#"
+              href="https://x.com/GautengCet"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-white font-semibold hover:opacity-90 transition"
             >
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
