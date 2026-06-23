@@ -237,7 +237,9 @@ function ContactPage() {
               TikTok
             </a>
             <a
-              href="#"
+              href="https://youtube.com/@gautengcetacademicsdepartm6489"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-[#FF0000] px-6 py-3 text-white font-semibold hover:opacity-90 transition"
             >
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
