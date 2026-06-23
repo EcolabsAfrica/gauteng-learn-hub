@@ -55,7 +55,7 @@ const clusters = [
 
 const galleryTeaser = [g2, g1, g3, g4, g5, g6];
 
-const rotatingImages = [rot1, rot2, rot3, rot4, rot5, rot6, rot7, rot8, rot9, rot10];
+const rotatingImages: { url: string }[] = [rot1, rot2, rot3, rot4, rot5, rot6, rot7, rot8, rot9, rot10];
 
 function RotatingImage({ className }: { className?: string }) {
   const [idx, setIdx] = useState(0);
