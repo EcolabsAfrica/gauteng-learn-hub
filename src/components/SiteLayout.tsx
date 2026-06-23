@@ -20,9 +20,8 @@ export function SiteLayout() {
     <div className="min-h-screen flex flex-col bg-background text-foreground font-sans">
       <header className="sticky top-0 z-40 bg-white text-foreground shadow-sm border-b border-black/5">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex h-24 items-center justify-between gap-4">
-          <Link to="/" className="flex items-center gap-10 md:gap-16 shrink-0">
+          <Link to="/" className="flex items-center shrink-0" aria-label="Department of Higher Education and Training">
             <img src={dhetLogo.url} alt="Department of Higher Education and Training, Republic of South Africa" className="h-20 w-auto object-contain" />
-            <img src={cetLogo.url} alt="Gauteng CET College" className="h-12 w-auto object-contain" />
           </Link>
           <nav className="hidden lg:flex items-center gap-1">
             {nav.map((n) => (
@@ -42,9 +41,15 @@ export function SiteLayout() {
               Apply Now
             </Link>
           </nav>
-          <button className="lg:hidden p-2" onClick={() => setOpen(!open)} aria-label="Menu">
-            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          <Link to="/" className="hidden lg:flex items-center shrink-0 ml-auto" aria-label="Gauteng CET College">
+            <img src={cetLogo.url} alt="Gauteng CET College" className="h-12 w-auto object-contain" />
+          </Link>
+          <div className="flex items-center gap-3 lg:hidden">
+            <img src={cetLogo.url} alt="Gauteng CET College" className="h-10 w-auto object-contain" />
+            <button className="p-2" onClick={() => setOpen(!open)} aria-label="Menu">
+              {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
         {open && (
           <div className="lg:hidden border-t border-black/5 bg-white">
