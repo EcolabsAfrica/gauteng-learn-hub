@@ -19,16 +19,26 @@ export function SiteLayout() {
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground font-sans">
       <header className="sticky top-0 z-40 bg-white text-foreground shadow-sm border-b border-black/5">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex h-24 items-center justify-between gap-4">
-          <Link to="/" className="flex items-center shrink-0" aria-label="Department of Higher Education and Training">
-            <img src={dhetLogo.url} alt="Department of Higher Education and Training, Republic of South Africa" className="h-20 w-auto object-contain" />
-          </Link>
-          <nav className="hidden lg:flex items-center gap-1">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-4 py-4">
+            <Link to="/" className="flex items-center shrink-0" aria-label="Department of Higher Education and Training">
+              <img src={dhetLogo.url} alt="Department of Higher Education and Training, Republic of South Africa" className="h-16 sm:h-20 lg:h-24 w-auto object-contain" />
+            </Link>
+            <Link to="/" className="flex items-center shrink-0" aria-label="South West Gauteng TVET College">
+              <img src={cetLogo.url} alt="South West Gauteng TVET College" className="h-16 sm:h-20 lg:h-24 w-auto object-contain" />
+            </Link>
+            <button className="p-2 lg:hidden" onClick={() => setOpen(!open)} aria-label="Menu">
+              {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+        </div>
+        <nav className="hidden lg:block bg-primary text-primary-foreground">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-center gap-2 h-14">
             {nav.map((n) => (
               <Link
                 key={n.to}
                 to={n.to}
-                className="px-2.5 py-2 text-sm font-medium text-foreground hover:text-primary [&.active]:text-primary [&.active]:underline [&.active]:underline-offset-8 [&.active]:decoration-2"
+                className="px-4 py-2 text-sm font-semibold text-primary-foreground/95 hover:text-white [&.active]:text-white [&.active]:underline [&.active]:underline-offset-8 [&.active]:decoration-2"
                 activeProps={{ className: "active" }}
               >
                 {n.label}
@@ -36,21 +46,12 @@ export function SiteLayout() {
             ))}
             <Link
               to="/contact"
-              className="ml-2 inline-flex items-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90 transition"
+              className="ml-2 inline-flex items-center rounded-full bg-white px-5 py-2 text-sm font-semibold text-primary hover:opacity-90 transition"
             >
               Apply Now
             </Link>
-          </nav>
-          <Link to="/" className="hidden lg:flex items-center shrink-0 ml-auto" aria-label="Gauteng CET College">
-            <img src={cetLogo.url} alt="Gauteng CET College" className="h-12 w-auto object-contain" />
-          </Link>
-          <div className="flex items-center gap-3 lg:hidden">
-            <img src={cetLogo.url} alt="Gauteng CET College" className="h-10 w-auto object-contain" />
-            <button className="p-2" onClick={() => setOpen(!open)} aria-label="Menu">
-              {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
           </div>
-        </div>
+        </nav>
         {open && (
           <div className="lg:hidden border-t border-black/5 bg-white">
             <div className="px-4 py-2 flex flex-col">
