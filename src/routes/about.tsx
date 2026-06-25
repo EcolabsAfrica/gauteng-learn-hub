@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import hero from "../assets/gallery/photo-02-fire-safety-training.jpeg.asset.json";
 import partnership from "../assets/students-induction.jpeg.asset.json";
 import principal from "../assets/principal-new.jpeg.asset.json";
@@ -46,6 +48,7 @@ const staffByCluster = [
 
 function AboutPage() {
   const max = Math.max(...staffByCluster.map((s) => s.n));
+  const [active, setActive] = useState<null | { name: string; title: string; photo: string }>(null);
   return (
     <>
       {/* SECTION 1: PAGE HERO */}
@@ -164,7 +167,14 @@ function AboutPage() {
                 className={`flex items-center gap-5 p-6 rounded-xl border border-gray-200 ${p.vacant ? "opacity-60" : ""}`}
               >
                 {p.photo ? (
-                  <img src={p.photo} alt={p.name} className="w-20 h-20 rounded-full object-cover shrink-0" />
+                  <button
+                    type="button"
+                    onClick={() => setActive({ name: p.name, title: p.title, photo: p.photo! })}
+                    className="shrink-0 rounded-full focus:outline-none focus:ring-2 focus:ring-primary transition hover:opacity-90"
+                    aria-label={`View larger photo of ${p.name}`}
+                  >
+                    <img src={p.photo} alt={p.name} className="w-20 h-20 rounded-full object-cover cursor-pointer" />
+                  </button>
                 ) : (
                   <div className="w-20 h-20 rounded-full bg-alt-bg text-navy font-bold flex items-center justify-center text-xl shrink-0">
                     {p.initials}
@@ -211,6 +221,18 @@ function AboutPage() {
           </div>
         </div>
       </section>
+
+      <Dialog open={!!active} onOpenChange={(o) => !o && setActive(null)}>
+        <DialogContent className="max-w-lg">
+          {active && (
+            <>
+              <img src={active.photo} alt={active.name} className="w-full h-auto rounded-lg object-cover" />
+              <DialogTitle className="mt-4 text-navy text-xl">{active.name}</DialogTitle>
+              <DialogDescription className="text-foreground/70">{active.title}</DialogDescription>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </>
   );
 }
