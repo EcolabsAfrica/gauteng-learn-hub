@@ -22,10 +22,10 @@ export function SiteLayout() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-4 py-4">
             <Link to="/" className="flex items-center shrink-0" aria-label="Department of Higher Education and Training">
-              <img src={dhetLogo.url} alt="Department of Higher Education and Training, Republic of South Africa" className="h-20 sm:h-24 lg:h-28 w-auto object-contain" />
+              <img src={dhetLogo.url} alt="Department of Higher Education and Training, Republic of South Africa" className="h-32 sm:h-40 lg:h-48 w-auto object-contain" />
             </Link>
             <Link to="/" className="flex items-center shrink-0" aria-label="South West Gauteng TVET College">
-              <img src={cetLogo.url} alt="South West Gauteng TVET College" className="h-20 sm:h-24 lg:h-28 w-auto object-contain" />
+              <img src={cetLogo.url} alt="South West Gauteng TVET College" className="h-32 sm:h-40 lg:h-48 w-auto object-contain" />
             </Link>
             <button className="p-2 lg:hidden" onClick={() => setOpen(!open)} aria-label="Menu">
               {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
