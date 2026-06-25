@@ -22,7 +22,7 @@ export function SiteLayout() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-4 py-4">
             <Link to="/" className="flex items-center shrink-0" aria-label="Department of Higher Education and Training">
-              <img src={dhetLogo.url} alt="Department of Higher Education and Training, Republic of South Africa" className="h-28 sm:h-32 lg:h-40 w-auto object-contain" />
+              <img src={dhetLogo.url} alt="Department of Higher Education and Training, Republic of South Africa" className="h-20 sm:h-24 lg:h-28 w-auto object-contain" />
             </Link>
             <Link to="/" className="flex items-center shrink-0" aria-label="South West Gauteng TVET College">
               <img src={cetLogo.url} alt="South West Gauteng TVET College" className="h-20 sm:h-24 lg:h-28 w-auto object-contain" />
@@ -80,7 +80,7 @@ export function SiteLayout() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 grid gap-8 lg:grid-cols-3">
           <div>
             <div className="mb-4 flex items-center gap-4 bg-white/95 rounded-md p-4 w-full max-w-sm">
-              <img src={dhetLogo.url} alt="DHET" className="h-16 sm:h-20 w-auto object-contain shrink-0" />
+              <img src={dhetLogo.url} alt="DHET" className="h-10 sm:h-12 w-auto object-contain shrink-0" />
               <img src={cetLogo.url} alt="Gauteng CET College" className="h-10 sm:h-12 w-auto object-contain shrink-0" />
             </div>
             <h3 className="font-bold text-lg">Gauteng CET College</h3>
