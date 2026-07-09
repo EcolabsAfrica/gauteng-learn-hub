@@ -18,6 +18,7 @@ import p12 from "../assets/gallery/photo-12.jpeg.asset.json";
 import p13 from "../assets/gallery/photo-13.jpeg.asset.json";
 import p14 from "../assets/gallery/photo-14.jpeg.asset.json";
 import p15 from "../assets/principal-new.jpeg.asset.json";
+import p16 from "../assets/noge.jpeg.asset.json";
 
 type Category = "Students" | "Training" | "Skills & Vocational" | "Leadership & Events";
 
@@ -43,6 +44,7 @@ const photos: GalleryPhoto[] = [
   { url: p13.url, caption: "Gauteng CET College students and staff — formal group portrait", category: "Leadership & Events" },
   { url: p14.url, caption: "Students in discussion — ideas and futures being built", category: "Students" },
   { url: p15.url, caption: "Mrs F.M. Chechile — Acting Principal, Gauteng CET College", category: "Leadership & Events" },
+  { url: p16.url, caption: "The Deputy Principal: Academic Services", category: "Leadership & Events" },
 ];
 
 const filters: ("All" | Category)[] = ["All", "Students", "Training", "Skills & Vocational", "Leadership & Events"];
