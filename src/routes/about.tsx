@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/compone
 import hero from "../assets/gallery/photo-02-fire-safety-training.jpeg.asset.json";
 import partnership from "../assets/students-induction.jpeg.asset.json";
 import principal from "../assets/principal-new.jpeg.asset.json";
+import noge from "../assets/noge.jpeg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({ meta: [
@@ -33,7 +34,7 @@ const objectives = [
 
 const personnel = [
   { name: "Mrs F.M. Chechile", title: "Acting Principal, Gauteng CET College", photo: principal.url, initials: "FC" },
-  { name: "Ms M. Noge", title: "Deputy Principal: Academic Services", initials: "MN" },
+  { name: "Ms M. Noge", title: "Deputy Principal: Academic Services", photo: noge.url, initials: "MN" },
   { name: "Vacant", title: "Deputy Principal: Corporate Services", initials: "—", vacant: true },
   { name: "Vacant", title: "Deputy Principal: Finance", initials: "—", vacant: true },
 ];
