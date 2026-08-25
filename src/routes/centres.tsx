@@ -53,7 +53,7 @@ const clusters: { key: string; name: string; lecturers: number; rows: Row[] }[] 
       ["Holy Trinity", "1 Khoza St, Atteridgeville", "073 635 4691"],
       ["Mamelodi", "19693 Montja St, Section N, Mamelodi West", "076 190 8647"],
       ["Reneilwe", "School 10945, Lefakong St, Mamelodi East", "072 431 5826"],
-      ["Moephathutse", "287 Pelo St, Zone 1, Ga-Rankuwa", "082 744 0929"],
+      ["Moephathutse", "287 Pelo St, Zone 1, Ga-Rankuwa", "072 800 6838 M.S. Ledwaba"],
       ["Pretoria Central", "389 Van der Walt", "083 414 2830"],
       ["Taamane", "1172 Jiyane St, Refilwe, Cullinan 1000", "074 935 7943"],
       ["Victory", "1460 Block G, Shoshanguve", "072 209 1329"],
