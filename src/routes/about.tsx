@@ -6,6 +6,7 @@ import hero from "../assets/gallery/photo-02-fire-safety-training.jpeg.asset.jso
 import partnership from "../assets/students-induction.jpeg.asset.json";
 import principal from "../assets/principal-new.jpeg.asset.json";
 import noge from "../assets/noge.jpeg.asset.json";
+import corporateServices from "../assets/deputy-principal-corporate-services.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({ meta: [
