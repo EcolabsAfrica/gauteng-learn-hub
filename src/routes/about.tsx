@@ -6,6 +6,7 @@ import hero from "../assets/gallery/photo-02-fire-safety-training.jpeg.asset.jso
 import partnership from "../assets/students-induction.jpeg.asset.json";
 import principal from "../assets/principal-new.jpeg.asset.json";
 import noge from "../assets/noge.jpeg.asset.json";
+import corporateServices from "../assets/deputy-principal-corporate-services.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({ meta: [
@@ -35,7 +36,7 @@ const objectives = [
 const personnel = [
   { name: "Mrs F.M. Chechile", title: "Acting Principal, Gauteng CET College", photo: principal.url, initials: "FC" },
   { name: "Ms M. Noge", title: "Deputy Principal: Academic Services", photo: noge.url, initials: "MN" },
-  { name: "Vacant", title: "Deputy Principal: Corporate Services", initials: "—", vacant: true },
+  { name: "Name to be confirmed", title: "Deputy Principal: Corporate Services", photo: corporateServices.url, initials: "CS" },
   { name: "Vacant", title: "Deputy Principal: Finance", initials: "—", vacant: true },
 ];
 
