@@ -7,6 +7,7 @@ import partnership from "../assets/students-induction.jpeg.asset.json";
 import principal from "../assets/principal-new.jpeg.asset.json";
 import noge from "../assets/noge.jpeg.asset.json";
 import corporateServices from "../assets/deputy-principal-corporate-services.png.asset.json";
+import thobejane from "../assets/deputy-principal-finance.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({ meta: [
@@ -37,7 +38,7 @@ const personnel = [
   { name: "Mrs F.M. Chechile", title: "Acting Principal, Gauteng CET College", photo: principal.url, initials: "FC" },
   { name: "Ms M. Noge", title: "Deputy Principal: Academic Services", photo: noge.url, initials: "MN" },
   { name: "Mr T. Serai", title: "Deputy Principal: Corporate Services", photo: corporateServices.url, initials: "TS" },
-  { name: "Vacant", title: "Deputy Principal: Finance", initials: "—", vacant: true },
+  { name: "Mr N. Thobejane", title: "Deputy Principal: Finance", photo: thobejane.url, initials: "NT" },
 ];
 
 const staffByCluster = [
@@ -166,7 +167,7 @@ function AboutPage() {
             {personnel.map((p) => (
               <div
                 key={p.name + p.title}
-                className={`flex items-center gap-5 p-6 rounded-xl border border-gray-200 ${p.vacant ? "opacity-60" : ""}`}
+                className={`flex items-center gap-5 p-6 rounded-xl border border-gray-200 ${"photo" in p ? "" : "opacity-60"}`}
               >
                 {p.photo ? (
                   <button
