@@ -167,7 +167,7 @@ function AboutPage() {
             {personnel.map((p) => (
               <div
                 key={p.name + p.title}
-                className={`flex items-center gap-5 p-6 rounded-xl border border-gray-200 ${p.vacant ? "opacity-60" : ""}`}
+                className={`flex items-center gap-5 p-6 rounded-xl border border-gray-200 ${"photo" in p ? "" : "opacity-60"}`}
               >
                 {p.photo ? (
                   <button
