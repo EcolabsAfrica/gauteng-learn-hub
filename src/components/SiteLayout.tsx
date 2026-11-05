@@ -165,6 +165,8 @@ export function SiteLayout() {
               {nav.map((n) => (
                 <li key={n.to}><Link to={n.to} className="hover:underline">{n.label}</Link></li>
               ))}
+              <li><Link to="/opportunities" className="hover:underline">Opportunities</Link></li>
+              <li><Link to="/contact" className="hover:underline">Contact & Apply</Link></li>
             </ul>
           </div>
           <div>
