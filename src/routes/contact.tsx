@@ -142,20 +142,7 @@ function ContactPage() {
         </div>
       </section>
 
-      {/* SECTION 3: ANNOUNCEMENTS */}
-      {/* [ADMIN: Replace this section with live announcement links as provided by the college] */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
-          <h2 className="text-primary font-bold text-3xl md:text-4xl text-center">Announcements</h2>
-          <div className="mt-8 bg-alt-bg border border-gray-200 rounded-xl p-8 text-center">
-            <p className="text-foreground/70 text-base md:text-lg">
-              No announcements at this time. Check back soon for enrolment dates, programme updates, and events.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 4: NEWSLETTER SIGNUP */}
+      {/* SECTION 3: NEWSLETTER SIGNUP */}
       <section className="bg-navy text-navy-foreground">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
           <Mail className="h-10 w-10 text-primary mx-auto" />
