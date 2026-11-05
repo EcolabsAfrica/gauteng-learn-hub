@@ -1,8 +1,8 @@
 # Roadmap
 
 ## Done
-- [x] Opportunities section: dropdown (College Council Nominations, Vacancies, Tenders, RFQ, Bursaries) + per-category pages with Download buttons; Announcements block removed from Contact page.
+- [x] Opportunities section: dropdown + per-category pages with Download buttons; Announcements block removed from Contact page.
+- [x] Staff Portal (/staff): 3 allowed staff emails can sign up, upload and remove documents.
 
 ## Blocked / waiting on user
-- Documents to publish (College Council nomination form, any RFQs/tenders/vacancies/bursaries) — user to send.
-- Decide who posts new items: user sends each document to agent, or staff self-service login (needs Lovable Cloud).
+- Staff to create their accounts and post the first documents.
