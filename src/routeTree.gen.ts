@@ -15,7 +15,9 @@ import { Route as AccreditationRouteImport } from './routes/accreditation'
 import { Route as CentresRouteImport } from './routes/centres'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as OpportunitiesRouteImport } from './routes/opportunities'
 import { Route as ProgrammesRouteImport } from './routes/programmes'
+import { Route as OpportunitiesCategoryRouteImport } from './routes/opportunities.$category'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -47,10 +49,20 @@ const GalleryRoute = GalleryRouteImport.update({
   path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OpportunitiesRoute = OpportunitiesRouteImport.update({
+  id: '/opportunities',
+  path: '/opportunities',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProgrammesRoute = ProgrammesRouteImport.update({
   id: '/programmes',
   path: '/programmes',
   getParentRoute: () => rootRouteImport,
+} as any)
+const OpportunitiesCategoryRoute = OpportunitiesCategoryRouteImport.update({
+  id: '/$category',
+  path: '/$category',
+  getParentRoute: () => OpportunitiesRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -60,7 +72,9 @@ export interface FileRoutesByFullPath {
   '/centres': typeof CentresRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/opportunities': typeof OpportunitiesRouteWithChildren
   '/programmes': typeof ProgrammesRoute
+  '/opportunities/$category': typeof OpportunitiesCategoryRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -69,7 +83,9 @@ export interface FileRoutesByTo {
   '/centres': typeof CentresRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/opportunities': typeof OpportunitiesRouteWithChildren
   '/programmes': typeof ProgrammesRoute
+  '/opportunities/$category': typeof OpportunitiesCategoryRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -79,7 +95,9 @@ export interface FileRoutesById {
   '/centres': typeof CentresRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/opportunities': typeof OpportunitiesRouteWithChildren
   '/programmes': typeof ProgrammesRoute
+  '/opportunities/$category': typeof OpportunitiesCategoryRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -90,7 +108,9 @@ export interface FileRouteTypes {
     | '/centres'
     | '/contact'
     | '/gallery'
+    | '/opportunities'
     | '/programmes'
+    | '/opportunities/$category'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -99,7 +119,9 @@ export interface FileRouteTypes {
     | '/centres'
     | '/contact'
     | '/gallery'
+    | '/opportunities'
     | '/programmes'
+    | '/opportunities/$category'
   id:
     | '__root__'
     | '/'
@@ -108,7 +130,9 @@ export interface FileRouteTypes {
     | '/centres'
     | '/contact'
     | '/gallery'
+    | '/opportunities'
     | '/programmes'
+    | '/opportunities/$category'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -118,6 +142,7 @@ export interface RootRouteChildren {
   CentresRoute: typeof CentresRoute
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
+  OpportunitiesRoute: typeof OpportunitiesRouteWithChildren
   ProgrammesRoute: typeof ProgrammesRoute
 }
 
@@ -165,6 +190,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/opportunities': {
+      id: '/opportunities'
+      path: '/opportunities'
+      fullPath: '/opportunities'
+      preLoaderRoute: typeof OpportunitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/programmes': {
       id: '/programmes'
       path: '/programmes'
@@ -172,8 +204,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgrammesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/opportunities/$category': {
+      id: '/opportunities/$category'
+      path: '/$category'
+      fullPath: '/opportunities/$category'
+      preLoaderRoute: typeof OpportunitiesCategoryRouteImport
+      parentRoute: typeof OpportunitiesRoute
+    }
   }
 }
+
+interface OpportunitiesRouteChildren {
+  OpportunitiesCategoryRoute: typeof OpportunitiesCategoryRoute
+}
+
+const OpportunitiesRouteChildren: OpportunitiesRouteChildren = {
+  OpportunitiesCategoryRoute: OpportunitiesCategoryRoute,
+}
+
+const OpportunitiesRouteWithChildren = OpportunitiesRoute._addFileChildren(
+  OpportunitiesRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -182,6 +233,7 @@ const rootRouteChildren: RootRouteChildren = {
   CentresRoute: CentresRoute,
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
+  OpportunitiesRoute: OpportunitiesRouteWithChildren,
   ProgrammesRoute: ProgrammesRoute,
 }
 export const routeTree = rootRouteImport

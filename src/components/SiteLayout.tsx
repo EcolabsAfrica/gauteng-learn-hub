@@ -1,8 +1,9 @@
 import { Link, Outlet } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X, Phone, MapPin } from "lucide-react";
+import { Menu, X, Phone, MapPin, ChevronDown } from "lucide-react";
 import dhetLogo from "../assets/dhet-logo.png.asset.json";
 import cetLogo from "../assets/cet-logo.png.asset.json";
+import { opportunityCategories } from "../lib/opportunities";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -16,6 +17,7 @@ const nav = [
 
 export function SiteLayout() {
   const [open, setOpen] = useState(false);
+  const [oppOpen, setOppOpen] = useState(false);
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground font-sans">
       <header className="relative z-40 bg-white text-foreground shadow-sm border-b border-black/5">
