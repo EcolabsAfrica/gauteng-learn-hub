@@ -12,7 +12,7 @@ export interface StoredDoc {
 }
 
 export async function listDocs(category?: string): Promise<StoredDoc[]> {
-  let q = supabase.from("opportunity_documents").select("*").order("created_at", { ascending: false });
+  let q = supabase.from("opportunity_documents").select("id, category, title, description, closing_date, file_path, file_name, created_at").order("created_at", { ascending: false });
   if (category) q = q.eq("category", category);
   const { data, error } = await q;
   if (error) throw error;
