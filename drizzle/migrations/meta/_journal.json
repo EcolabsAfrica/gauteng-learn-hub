@@ -15,6 +15,13 @@
       "when": 1793873425977,
       "tag": "0001_opportunity_files_read",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793874228799,
+      "tag": "0002_tighten_opportunity_read_access",
+      "breakpoints": true
     }
   ]
 }
