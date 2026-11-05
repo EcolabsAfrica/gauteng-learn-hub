@@ -36,6 +36,10 @@ export const Route = createFileRoute("/opportunities/$category")({
 
 function OpportunityCategoryPage() {
   const category = Route.useLoaderData();
+  const { data: uploaded = [], isLoading } = useQuery({
+    queryKey: ["opp-docs", category.slug],
+    queryFn: () => listDocs(category.slug),
+  });
 
   return (
     <>
