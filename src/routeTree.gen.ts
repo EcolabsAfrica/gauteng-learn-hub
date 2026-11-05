@@ -18,6 +18,7 @@ import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as OpportunitiesRouteImport } from './routes/opportunities'
 import { Route as ProgrammesRouteImport } from './routes/programmes'
 import { Route as StaffRouteImport } from './routes/staff'
+import { Route as OpportunitiesIndexRouteImport } from './routes/opportunities.index'
 import { Route as OpportunitiesCategoryRouteImport } from './routes/opportunities.$category'
 
 const IndexRoute = IndexRouteImport.update({
@@ -65,6 +66,11 @@ const StaffRoute = StaffRouteImport.update({
   path: '/staff',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OpportunitiesIndexRoute = OpportunitiesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => OpportunitiesRoute,
+} as any)
 const OpportunitiesCategoryRoute = OpportunitiesCategoryRouteImport.update({
   id: '/$category',
   path: '/$category',
@@ -82,6 +88,7 @@ export interface FileRoutesByFullPath {
   '/programmes': typeof ProgrammesRoute
   '/staff': typeof StaffRoute
   '/opportunities/$category': typeof OpportunitiesCategoryRoute
+  '/opportunities/': typeof OpportunitiesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -90,10 +97,10 @@ export interface FileRoutesByTo {
   '/centres': typeof CentresRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
-  '/opportunities': typeof OpportunitiesRouteWithChildren
   '/programmes': typeof ProgrammesRoute
   '/staff': typeof StaffRoute
   '/opportunities/$category': typeof OpportunitiesCategoryRoute
+  '/opportunities': typeof OpportunitiesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -107,6 +114,7 @@ export interface FileRoutesById {
   '/programmes': typeof ProgrammesRoute
   '/staff': typeof StaffRoute
   '/opportunities/$category': typeof OpportunitiesCategoryRoute
+  '/opportunities/': typeof OpportunitiesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -121,6 +129,7 @@ export interface FileRouteTypes {
     | '/programmes'
     | '/staff'
     | '/opportunities/$category'
+    | '/opportunities/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -129,10 +138,10 @@ export interface FileRouteTypes {
     | '/centres'
     | '/contact'
     | '/gallery'
-    | '/opportunities'
     | '/programmes'
     | '/staff'
     | '/opportunities/$category'
+    | '/opportunities'
   id:
     | '__root__'
     | '/'
@@ -145,6 +154,7 @@ export interface FileRouteTypes {
     | '/programmes'
     | '/staff'
     | '/opportunities/$category'
+    | '/opportunities/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -224,6 +234,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StaffRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/opportunities/': {
+      id: '/opportunities/'
+      path: '/'
+      fullPath: '/opportunities/'
+      preLoaderRoute: typeof OpportunitiesIndexRouteImport
+      parentRoute: typeof OpportunitiesRoute
+    }
     '/opportunities/$category': {
       id: '/opportunities/$category'
       path: '/$category'
@@ -236,10 +253,12 @@ declare module '@tanstack/react-router' {
 
 interface OpportunitiesRouteChildren {
   OpportunitiesCategoryRoute: typeof OpportunitiesCategoryRoute
+  OpportunitiesIndexRoute: typeof OpportunitiesIndexRoute
 }
 
 const OpportunitiesRouteChildren: OpportunitiesRouteChildren = {
   OpportunitiesCategoryRoute: OpportunitiesCategoryRoute,
+  OpportunitiesIndexRoute: OpportunitiesIndexRoute,
 }
 
 const OpportunitiesRouteWithChildren = OpportunitiesRoute._addFileChildren(
