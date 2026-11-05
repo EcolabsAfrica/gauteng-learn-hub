@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1793873415249,
+      "tag": "0000_opportunity_documents",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1793873425977,
+      "tag": "0001_opportunity_files_read",
+      "breakpoints": true
+    }
+  ]
+}

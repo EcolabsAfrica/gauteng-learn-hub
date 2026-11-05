@@ -17,6 +17,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as OpportunitiesRouteImport } from './routes/opportunities'
 import { Route as ProgrammesRouteImport } from './routes/programmes'
+import { Route as StaffRouteImport } from './routes/staff'
 import { Route as OpportunitiesCategoryRouteImport } from './routes/opportunities.$category'
 
 const IndexRoute = IndexRouteImport.update({
@@ -59,6 +60,11 @@ const ProgrammesRoute = ProgrammesRouteImport.update({
   path: '/programmes',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StaffRoute = StaffRouteImport.update({
+  id: '/staff',
+  path: '/staff',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OpportunitiesCategoryRoute = OpportunitiesCategoryRouteImport.update({
   id: '/$category',
   path: '/$category',
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/gallery': typeof GalleryRoute
   '/opportunities': typeof OpportunitiesRouteWithChildren
   '/programmes': typeof ProgrammesRoute
+  '/staff': typeof StaffRoute
   '/opportunities/$category': typeof OpportunitiesCategoryRoute
 }
 export interface FileRoutesByTo {
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/gallery': typeof GalleryRoute
   '/opportunities': typeof OpportunitiesRouteWithChildren
   '/programmes': typeof ProgrammesRoute
+  '/staff': typeof StaffRoute
   '/opportunities/$category': typeof OpportunitiesCategoryRoute
 }
 export interface FileRoutesById {
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/gallery': typeof GalleryRoute
   '/opportunities': typeof OpportunitiesRouteWithChildren
   '/programmes': typeof ProgrammesRoute
+  '/staff': typeof StaffRoute
   '/opportunities/$category': typeof OpportunitiesCategoryRoute
 }
 export interface FileRouteTypes {
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/opportunities'
     | '/programmes'
+    | '/staff'
     | '/opportunities/$category'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/opportunities'
     | '/programmes'
+    | '/staff'
     | '/opportunities/$category'
   id:
     | '__root__'
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/opportunities'
     | '/programmes'
+    | '/staff'
     | '/opportunities/$category'
   fileRoutesById: FileRoutesById
 }
@@ -144,6 +156,7 @@ export interface RootRouteChildren {
   GalleryRoute: typeof GalleryRoute
   OpportunitiesRoute: typeof OpportunitiesRouteWithChildren
   ProgrammesRoute: typeof ProgrammesRoute
+  StaffRoute: typeof StaffRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -204,6 +217,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgrammesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/staff': {
+      id: '/staff'
+      path: '/staff'
+      fullPath: '/staff'
+      preLoaderRoute: typeof StaffRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/opportunities/$category': {
       id: '/opportunities/$category'
       path: '/$category'
@@ -235,6 +255,7 @@ const rootRouteChildren: RootRouteChildren = {
   GalleryRoute: GalleryRoute,
   OpportunitiesRoute: OpportunitiesRouteWithChildren,
   ProgrammesRoute: ProgrammesRoute,
+  StaffRoute: StaffRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

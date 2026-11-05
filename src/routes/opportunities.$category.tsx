@@ -1,6 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, CalendarDays, Download, FileText } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
 import { getOpportunityCategory } from "../lib/opportunities";
+import { listDocs, downloadDoc } from "../lib/opportunity-docs";
 
 export const Route = createFileRoute("/opportunities/$category")({
   loader: ({ params }) => {
@@ -36,6 +38,10 @@ export const Route = createFileRoute("/opportunities/$category")({
 
 function OpportunityCategoryPage() {
   const category = Route.useLoaderData();
+  const { data: uploaded = [], isLoading } = useQuery({
+    queryKey: ["opp-docs", category.slug],
+    queryFn: () => listDocs(category.slug),
+  });
 
   return (
     <>
@@ -64,7 +70,9 @@ function OpportunityCategoryPage() {
             <ArrowLeft className="h-4 w-4" /> All opportunities
           </Link>
 
-          {category.documents.length === 0 ? (
+          {isLoading ? (
+            <p className="mt-8 text-foreground/60">Loading documents…</p>
+          ) : uploaded.length === 0 ? (
             <div className="mt-8 bg-alt-bg border border-gray-200 rounded-xl p-8 text-center">
               <p className="text-foreground/70 text-base md:text-lg">
                 No documents have been posted here yet. Please check back soon.
@@ -72,9 +80,9 @@ function OpportunityCategoryPage() {
             </div>
           ) : (
             <ul className="mt-8 space-y-4">
-              {category.documents.map((doc) => (
+              {uploaded.map((doc) => (
                 <li
-                  key={doc.title}
+                  key={doc.id}
                   className="bg-alt-bg border border-gray-200 rounded-xl p-5 md:p-6 flex flex-col sm:flex-row sm:items-center gap-4"
                 >
                   <FileText className="h-8 w-8 text-primary shrink-0" />
@@ -85,21 +93,21 @@ function OpportunityCategoryPage() {
                         {doc.description}
                       </p>
                     )}
-                    {doc.closingDate && (
+                    {doc.closing_date && (
                       <p className="mt-1 inline-flex items-center gap-1 text-sm text-foreground/60">
                         <CalendarDays className="h-4 w-4" />
-                        Closing date: {doc.closingDate}
+                        Closing date: {new Date(doc.closing_date).toLocaleDateString("en-ZA", { day: "numeric", month: "long", year: "numeric" })}
                       </p>
                     )}
                   </div>
-                  <a
-                    href={doc.file}
-                    download
+                  <button
+                    type="button"
+                    onClick={() => downloadDoc(doc).catch(() => alert("Sorry, the download failed. Please try again."))}
                     className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition shrink-0"
                   >
                     <Download className="h-4 w-4" />
                     Download
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>

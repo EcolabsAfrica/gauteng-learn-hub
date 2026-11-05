@@ -167,6 +167,7 @@ export function SiteLayout() {
               ))}
               <li><Link to="/opportunities" className="hover:underline">Opportunities</Link></li>
               <li><Link to="/contact" className="hover:underline">Contact & Apply</Link></li>
+              <li><Link to="/staff" className="hover:underline">Staff Portal</Link></li>
             </ul>
           </div>
           <div>
