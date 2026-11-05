@@ -1,8 +1,9 @@
 import { Link, Outlet } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X, Phone, MapPin } from "lucide-react";
+import { Menu, X, Phone, MapPin, ChevronDown } from "lucide-react";
 import dhetLogo from "../assets/dhet-logo.png.asset.json";
 import cetLogo from "../assets/cet-logo.png.asset.json";
+import { opportunityCategories } from "../lib/opportunities";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -16,6 +17,7 @@ const nav = [
 
 export function SiteLayout() {
   const [open, setOpen] = useState(false);
+  const [oppOpen, setOppOpen] = useState(false);
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground font-sans">
       <header className="relative z-40 bg-white text-foreground shadow-sm border-b border-black/5">
@@ -44,6 +46,31 @@ export function SiteLayout() {
                 {n.label}
               </Link>
             ))}
+            <div className="relative group">
+              <Link
+                to="/opportunities"
+                className="inline-flex items-center gap-1 px-4 py-2 text-sm font-semibold text-primary-foreground/95 hover:text-white [&.active]:text-white [&.active]:underline [&.active]:underline-offset-8 [&.active]:decoration-2"
+                activeProps={{ className: "active" }}
+              >
+                Opportunities
+                <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
+              </Link>
+              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 transition">
+                <div className="w-64 rounded-lg bg-white text-foreground shadow-lg border border-black/10 py-2">
+                  {opportunityCategories.map((c) => (
+                    <Link
+                      key={c.slug}
+                      to="/opportunities/$category"
+                      params={{ category: c.slug }}
+                      className="block px-4 py-2 text-sm font-medium hover:bg-alt-bg hover:text-primary [&.active]:text-primary"
+                      activeProps={{ className: "active" }}
+                    >
+                      {c.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
             <Link
               to="/contact"
               className="ml-2 inline-flex items-center rounded-full bg-white px-5 py-2 text-sm font-semibold text-primary hover:opacity-90 transition"
@@ -60,12 +87,44 @@ export function SiteLayout() {
                   key={n.to}
                   to={n.to}
                   onClick={() => setOpen(false)}
-                  className="px-2 py-3 text-sm font-medium border-b border-black/5 last:border-0 [&.active]:text-primary"
+                  className="px-2 py-3 text-sm font-medium border-b border-black/5 [&.active]:text-primary"
                   activeProps={{ className: "active" }}
                 >
                   {n.label}
                 </Link>
               ))}
+              <button
+                onClick={() => setOppOpen(!oppOpen)}
+                className="flex items-center justify-between px-2 py-3 text-sm font-medium border-b border-black/5 text-left"
+                aria-expanded={oppOpen}
+              >
+                Opportunities
+                <ChevronDown className={`h-4 w-4 transition-transform ${oppOpen ? "rotate-180" : ""}`} />
+              </button>
+              {oppOpen && (
+                <div className="flex flex-col border-b border-black/5">
+                  <Link
+                    to="/opportunities"
+                    onClick={() => setOpen(false)}
+                    className="px-6 py-2.5 text-sm font-medium text-foreground/70 [&.active]:text-primary"
+                    activeProps={{ className: "active" }}
+                  >
+                    All Opportunities
+                  </Link>
+                  {opportunityCategories.map((c) => (
+                    <Link
+                      key={c.slug}
+                      to="/opportunities/$category"
+                      params={{ category: c.slug }}
+                      onClick={() => setOpen(false)}
+                      className="px-6 py-2.5 text-sm font-medium text-foreground/70 [&.active]:text-primary"
+                      activeProps={{ className: "active" }}
+                    >
+                      {c.title}
+                    </Link>
+                  ))}
+                </div>
+              )}
               <Link to="/contact" onClick={() => setOpen(false)} className="mt-3 mb-2 inline-flex justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground">Apply Now</Link>
             </div>
           </div>
