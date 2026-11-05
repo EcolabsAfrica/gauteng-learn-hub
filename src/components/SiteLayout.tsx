@@ -12,7 +12,6 @@ const nav = [
   { to: "/centres", label: "Our Centres" },
   { to: "/accreditation", label: "Accreditation" },
   { to: "/gallery", label: "Gallery" },
-  { to: "/contact", label: "Contact & Apply" },
 ] as const;
 
 export function SiteLayout() {
@@ -73,6 +72,13 @@ export function SiteLayout() {
             </div>
             <Link
               to="/contact"
+              className="px-4 py-2 text-sm font-semibold text-primary-foreground/95 hover:text-white [&.active]:text-white [&.active]:underline [&.active]:underline-offset-8 [&.active]:decoration-2"
+              activeProps={{ className: "active" }}
+            >
+              Contact & Apply
+            </Link>
+            <Link
+              to="/contact"
               className="ml-2 inline-flex items-center rounded-full bg-white px-5 py-2 text-sm font-semibold text-primary hover:opacity-90 transition"
             >
               Apply Now
@@ -125,6 +131,14 @@ export function SiteLayout() {
                   ))}
                 </div>
               )}
+              <Link
+                to="/contact"
+                onClick={() => setOpen(false)}
+                className="px-2 py-3 text-sm font-medium border-b border-black/5 [&.active]:text-primary"
+                activeProps={{ className: "active" }}
+              >
+                Contact & Apply
+              </Link>
               <Link to="/contact" onClick={() => setOpen(false)} className="mt-3 mb-2 inline-flex justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground">Apply Now</Link>
             </div>
           </div>
@@ -151,6 +165,8 @@ export function SiteLayout() {
               {nav.map((n) => (
                 <li key={n.to}><Link to={n.to} className="hover:underline">{n.label}</Link></li>
               ))}
+              <li><Link to="/opportunities" className="hover:underline">Opportunities</Link></li>
+              <li><Link to="/contact" className="hover:underline">Contact & Apply</Link></li>
             </ul>
           </div>
           <div>
