@@ -14,13 +14,60 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      opportunity_documents: {
+        Row: {
+          category: string
+          closing_date: string | null
+          created_at: string
+          created_by: string | null
+          description: string | null
+          file_name: string
+          file_path: string
+          id: string
+          title: string
+        }
+        Insert: {
+          category: string
+          closing_date?: string | null
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          file_name: string
+          file_path: string
+          id?: string
+          title: string
+        }
+        Update: {
+          category?: string
+          closing_date?: string | null
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          file_name?: string
+          file_path?: string
+          id?: string
+          title?: string
+        }
+        Relationships: []
+      }
+      staff_emails: {
+        Row: {
+          email: string
+        }
+        Insert: {
+          email: string
+        }
+        Update: {
+          email?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      is_staff: { Args: never; Returns: boolean }
     }
     Enums: {
       [_ in never]: never
